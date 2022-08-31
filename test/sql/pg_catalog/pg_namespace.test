@@ -2,7 +2,7 @@
 # description: Test pg_namespace function
 # group: [pg_catalog]
 
-require skip_reload
+
 
 query I
 SELECT COUNT(*) FROM pg_namespace WHERE nspname='myschema'

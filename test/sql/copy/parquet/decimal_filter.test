@@ -2,10 +2,9 @@
 # description: Decimal filter pushdown into Parquet
 # group: [parquet]
 
-require parquet
 
-statement ok
-pragma enable_verification
+
+
 
 query IIII
 select * from 'data/parquet-testing/decimals.parquet'

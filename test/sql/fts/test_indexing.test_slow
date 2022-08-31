@@ -2,12 +2,11 @@
 # description: Full text search indexing
 # group: [fts]
 
-require skip_reload
 
-require fts
 
-statement ok
-PRAGMA enable_verification
+
+
+
 
 statement error
 PRAGMA drop_fts_index('test')
@@ -15,8 +14,7 @@ PRAGMA drop_fts_index('test')
 statement ok
 CREATE SCHEMA fts_main_test
 
-statement ok
-PRAGMA drop_fts_index('test')
+
 
 statement ok
 CREATE TABLE documents(id VARCHAR, body VARCHAR)
@@ -29,25 +27,21 @@ statement error
 PRAGMA create_fts_index('documents', 'id', 'body', nonexistant_param='dummy')
 
 # test different stemmer
-statement ok
-PRAGMA create_fts_index('documents', 'id', 'body', stemmer='turkish')
+
 
 # cannot overwrite without supplying the 'overwrite' param
 statement error
 PRAGMA create_fts_index('documents', 'id', 'body')
 
-statement ok
-PRAGMA create_fts_index('documents', 'id', 'body', overwrite=1)
+
 
 # drop and re-create
-statement ok
-PRAGMA drop_fts_index('documents')
+
 
 statement error
 PRAGMA create_fts_index('documents', 'id', 'body', stopwords='nonexistant_stopwords_table')
 
-statement ok
-PRAGMA create_fts_index('documents', 'id', 'body', stopwords='english')
+
 
 query III
 SELECT termid, docid, fieldid FROM fts_main_documents.terms
@@ -133,8 +127,7 @@ SELECT score, id, body FROM (SELECT *, fts_main_documents.match_bm25(id, 'quacke
 0.375436	doc2	 BÁRKING+BÁRKING+BÁRKING+BÁRKING
 
 # drop and re-create, but index both the 'body' and 'author' column this time
-statement ok
-PRAGMA drop_fts_index('documents')
+
 
 statement ok
 DROP TABLE documents
@@ -145,8 +138,7 @@ CREATE TABLE documents(id VARCHAR, body VARCHAR, author VARCHAR)
 statement ok
 INSERT INTO documents VALUES ('doc1', ' QUÁCKING+QUÁCKING+QUÁCKING', 'Hannes'), ('doc2', ' BÁRKING+BÁRKING+BÁRKING+BÁRKING', 'Mark'), ('doc3', ' MÉOWING+MÉOWING+MÉOWING+MÉOWING+MÉOWING+999', 'Laurens')
 
-statement ok
-PRAGMA create_fts_index('main.documents', 'id', 'body', 'author')
+
 
 # prepared statement for easier use
 statement ok
@@ -204,8 +196,7 @@ SELECT id FROM (SELECT *, fts_main_documents.match_bm25(id, 'hannes mark laurens
 ----
 
 # re-index with different stopwords table
-statement ok
-PRAGMA drop_fts_index('documents')
+
 
 statement ok
 CREATE TABLE my_stopwords (word VARCHAR)
@@ -213,8 +204,7 @@ CREATE TABLE my_stopwords (word VARCHAR)
 statement ok
 INSERT INTO my_stopwords VALUES ('quacking')
 
-statement ok
-PRAGMA create_fts_index('documents', 'id', 'body', stopwords='my_stopwords')
+
 
 # the word 'quacking' is no longer indexed, therefore doc1 is no longer retrieved with this query
 query III
@@ -223,11 +213,9 @@ SELECT id, body, author FROM (SELECT *, fts_main_documents.match_bm25(id, 'quack
 doc2	 BÁRKING+BÁRKING+BÁRKING+BÁRKING	Mark
 
 # re-index with a custom whitelist, so that we can retrieve documents by searching on numbers
-statement ok
-PRAGMA drop_fts_index('documents')
 
-statement ok
-PRAGMA create_fts_index('documents', 'id', 'body', ignore='(\\.|[^a-z0-9])+')
+
+
 
 query I
 SELECT body FROM (SELECT *, fts_main_documents.match_bm25(id, '999') AS score FROM documents) sq WHERE score IS NOT NULL ORDER BY score DESC
@@ -235,11 +223,9 @@ SELECT body FROM (SELECT *, fts_main_documents.match_bm25(id, '999') AS score FR
  MÉOWING+MÉOWING+MÉOWING+MÉOWING+MÉOWING+999
 
 # re-index with '*' to index all columns
-statement ok
-PRAGMA drop_fts_index('documents')
 
-statement ok
-PRAGMA create_fts_index('documents', 'id', '*', stopwords='english')
+
+
 
 # prepared statement again for easier use
 statement ok

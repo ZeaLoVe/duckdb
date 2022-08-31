@@ -2,8 +2,7 @@
 # description: Test MEDIAN aggregate
 # group: [aggregates]
 
-statement ok
-PRAGMA enable_verification
+
 
 # scalar quantiles
 query II
@@ -60,7 +59,7 @@ SELECT median(r::bigint) FROM quantile
 4999
 
 query I
-SELECT median(r::hugeint) FROM quantile
+SELECT median(r::BIGINT) FROM quantile
 ----
 4999
 

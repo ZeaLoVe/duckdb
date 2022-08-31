@@ -2,7 +2,7 @@
 # description: Read a parquet file with ZSTD
 # group: [parquet]
 
-require parquet
+
 
 query TTT
 select * from parquet_scan('data/parquet-testing/zstd.parquet') order by 1

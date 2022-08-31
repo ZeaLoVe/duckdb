@@ -2,7 +2,7 @@
 # description: Parquet write list
 # group: [writer]
 
-require parquet
+
 
 # standard list
 statement ok

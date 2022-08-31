@@ -2,10 +2,9 @@
 # description: Issue #3015: Wrong result on using limit after order by on null data
 # group: [order]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CREATE TABLE orders_small AS SELECT * FROM parquet_scan('data/parquet-testing/orders_small_parquet.test');

@@ -2,7 +2,7 @@
 # description: Test copy with a ZSTD stream
 # group: [csv]
 
-require parquet
+
 
 # lineitem
 statement ok

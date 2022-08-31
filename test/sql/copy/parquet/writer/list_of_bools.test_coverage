@@ -2,7 +2,7 @@
 # description: Parquet write list of bools
 # group: [writer]
 
-require parquet
+
 
 # big list of bools
 statement ok

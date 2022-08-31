@@ -2,7 +2,7 @@
 # description: Test that TPC-DS is re-entrant
 # group: [tpcds]
 
-require tpcds
+
 
 statement ok
 CALL dsdgen(sf=0.01);

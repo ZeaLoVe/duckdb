@@ -2,7 +2,7 @@
 # description: PREPARE of window functions
 # group: [prepared]
 
-require vector_size 512
+
 
 # ambiguous window function usage
 statement ok
@@ -14,7 +14,7 @@ EXECUTE v1(2)
 2
 
 query I
-EXECUTE v1(2::HUGEINT)
+EXECUTE v1(2::BIGINT)
 ----
 2
 

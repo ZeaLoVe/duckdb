@@ -2,8 +2,7 @@
 # description: Bigint try cast
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 # integer casts
 statement ok
@@ -97,7 +96,7 @@ NULL
 NULL
 
 query I
-SELECT i::HUGEINT::BIGINT FROM bigints ORDER BY i
+SELECT i::BIGINT::BIGINT FROM bigints ORDER BY i
 ----
 -9223372036854775808
 0

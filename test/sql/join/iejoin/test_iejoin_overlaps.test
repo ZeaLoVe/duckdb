@@ -2,8 +2,7 @@
 # description: IEJoin block short circuiting
 # group: [iejoin]
 
-statement ok
-PRAGMA enable_verification
+
 
 # We read from CSVs to prevent the optimiser from
 # using statistics to decide the join is a NOP

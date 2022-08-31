@@ -2,11 +2,10 @@
 # description: Test if zonemaps are correctly used
 # group: [optimizer]
 
-require skip_reload
 
 
-statement ok
-PRAGMA explain_output = PHYSICAL_ONLY;
+
+
 
 statement ok
 create temporary table t as select range a, length(range) b, mod(range,10000) c, 5 d, 10000 e from range(100000);

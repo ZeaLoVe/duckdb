@@ -2,8 +2,7 @@
 # description: Test UUID type
 # group: [uuid]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE IF NOT EXISTS uuid (u uuid);
@@ -258,7 +257,7 @@ statement error
 SELECT u-u FROM uuid
 
 statement error
-SELECT 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid::hugeint;
+SELECT 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::uuid::BIGINT;
 
 statement error
 SELECT ''::uuid

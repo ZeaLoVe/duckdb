@@ -2,8 +2,7 @@
 # description: LEFT test
 # group: [string]
 
-statement ok
-PRAGMA enable_verification
+
 
 # test LEFT on positive positions
 query TTTTT

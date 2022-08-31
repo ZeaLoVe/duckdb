@@ -4,8 +4,7 @@
 
 foreach compression none uncompressed rle dictionary pfor bitpacking fsst
 
-statement ok
-PRAGMA force_compression='${compression}'
+
 
 endloop
 

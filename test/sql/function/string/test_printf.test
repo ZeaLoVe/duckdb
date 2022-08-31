@@ -2,8 +2,7 @@
 # description: Test printf
 # group: [string]
 
-statement ok
-PRAGMA enable_verification
+
 
 # printf without format specifiers
 query TT
@@ -66,9 +65,9 @@ SELECT printf('%s', BLOB '\x01\xa0')
 ----
 \x01\xA0
 
-# hugeint
+# BIGINT
 query T
-SELECT printf('%s', 120381902481294715712::HUGEINT)
+SELECT printf('%s', 120381902481294715712::BIGINT)
 ----
 120381902481294715712
 

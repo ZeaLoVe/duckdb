@@ -2,7 +2,7 @@
 # description: Unclear what went wrong here in the past, but its fixed, and let's make sure it never happens again
 # group: [parquet]
 
-require parquet
+
 
 query I
 SELECT COUNT(backlink_count) FROM parquet_scan('data/parquet-testing/bug1554.parquet') WHERE http_status_code=200

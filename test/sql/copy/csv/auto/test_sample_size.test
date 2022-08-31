@@ -2,7 +2,7 @@
 # description: Test optional parameters for read csv
 # group: [auto]
 
-require vector_size 512
+
 
 # CSV file with very sparse column
 statement ok

@@ -2,8 +2,7 @@
 # description: Test basic functionality of map_from_entries with various different types
 # group: [map_from_entries]
 
-statement ok
-PRAGMA enable_verification
+
 
 # These tests will mostly be focused on testing proper behavior of keys with various different types
 
@@ -102,24 +101,24 @@ select col[123] from bigint_key;
 statement error
 create table bigint_key_dup as select MAP_FROM_ENTRIES(ARRAY[(123, 'x'), (123, 'y')]) col;
 
-# -- HUGEINT --
+# -- BIGINT --
 # Valid
 statement ok
-create table hugeint_key as select MAP_FROM_ENTRIES(ARRAY[(123::HUGEINT, 'x'), (-123::HUGEINT, 'y')]) col;
+create table BIGINT_key as select MAP_FROM_ENTRIES(ARRAY[(123::BIGINT, 'x'), (-123::BIGINT, 'y')]) col;
 
 query I
-select * from hugeint_key;
+select * from BIGINT_key;
 ----
 {123=x, -123=y}
 
 query I
-select col[123] from hugeint_key;
+select col[123] from BIGINT_key;
 ----
 [x]
 
 # Invalid
 statement error
-create table hugeint_key as select MAP_FROM_ENTRIES(ARRAY[(123, 'x'), (123, 'y')]) col;
+create table BIGINT_key as select MAP_FROM_ENTRIES(ARRAY[(123, 'x'), (123, 'y')]) col;
 
 # -- BOOLEAN --
 # Valid

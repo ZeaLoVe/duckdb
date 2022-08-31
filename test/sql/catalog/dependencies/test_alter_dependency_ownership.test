@@ -2,7 +2,7 @@
 # description: Tests alter of ownership of sequences
 # group: [dependencies]
 
-require skip_reload
+
 
 
 ##TEST: If the table is dropped, then the sequence is also droppped

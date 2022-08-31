@@ -2,7 +2,7 @@
 # description: Test copy statement with file overwrite on parquet
 # group: [writer]
 
-require parquet
+
 
 # create a table and insert some values
 statement ok

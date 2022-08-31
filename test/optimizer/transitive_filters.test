@@ -2,8 +2,7 @@
 # description: Test Transitive Filters
 # group: [optimizer]
 
-statement ok
-PRAGMA explain_output='optimized_only';
+
 
 ### constant comparison [=, >, >=] followed by j >= i #########################
 query II

@@ -3,13 +3,13 @@
 # group: [catalog]
 
 statement ok
-CREATE TABLE 👤(🔑 INTEGER PRIMARY KEY, 🗣 varchar(64), 🗓 DATE);
+CREATE TABLE 👤(🔑 INTEGER , 🗣 varchar(64), 🗓 DATE);
 
 statement ok
-CREATE TABLE ✍(🔑 INTEGER PRIMARY KEY, 🗣 varchar(64));
+CREATE TABLE ✍(🔑 INTEGER , 🗣 varchar(64));
 
 statement ok
-CREATE TABLE 📕(🔑 INTEGER PRIMARY KEY, 💬 varchar(64), 🔖 varchar(64), ✍ INTEGER);
+CREATE TABLE 📕(🔑 INTEGER , 💬 varchar(64), 🔖 varchar(64), ✍ INTEGER);
 
 statement ok
 CREATE TABLE 👤🏠📕(👤 INTEGER, 📕 INTEGER, ⭐ TEXT);

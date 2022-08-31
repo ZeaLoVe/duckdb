@@ -2,8 +2,7 @@
 # description: Test string casts
 # group: [cast]
 
-statement ok
-PRAGMA enable_verification
+
 
 query TTT
 SELECT (1=1)::VARCHAR, (1=0)::VARCHAR, NULL::BOOLEAN::VARCHAR
@@ -54,17 +53,42 @@ SELECT 2::DOUBLE::VARCHAR, 0.5::DOUBLE::VARCHAR, (-128.5)::DOUBLE::VARCHAR
 0.5
 -128.5
 
-# Casting decimal strings to integral types should round to be consistent.
-foreach inttype TINYINT SMALLINT INTEGER BIGINT HUGEINT
-
 query I
-SELECT '0.5'::${inttype};
+SELECT to_float('0.5')::TINYINT;
 ----
 1
 
 query I
-SELECT '-0.5'::${inttype};
+SELECT to_float('-0.5')::TINYINT;
 ----
 -1
 
-endloop
+query I
+SELECT to_float('0.5')::SMALLINT;
+----
+1
+
+query I
+SELECT to_float('-0.5')::SMALLINT;
+----
+-1
+
+query I
+SELECT to_float('0.5')::INTEGER;
+----
+1
+
+query I
+SELECT to_float('-0.5')::INTEGER;
+----
+-1
+
+query I
+SELECT to_float('0.5')::BIGINT;
+----
+1
+
+query I
+SELECT to_float('-0.5')::BIGINT;
+----
+-1

@@ -2,8 +2,7 @@
 # description: Test aggregates over many nulls on smallint column
 # group: [aggregates]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE t1(c0 BIGINT, c1 SMALLINT);

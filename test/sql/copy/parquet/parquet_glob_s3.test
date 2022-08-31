@@ -2,9 +2,9 @@
 # description: Test basic globbing of parquet files over s3
 # group: [parquet]
 
-require parquet
 
-require httpfs
+
+
 
 require-env S3_TEST_SERVER_AVAILABLE 1
 
@@ -89,8 +89,7 @@ statement error
 select count(*) from parquet_scan('s3://test-bucket/parquet_glob_s3/notglob/*.parquet')
 
 # parallel testing
-statement ok
-PRAGMA threads=4
+
 
 query I
 select count(*) from parquet_scan('s3://test-bucket/parquet_glob_s3/glob/t?.parquet')

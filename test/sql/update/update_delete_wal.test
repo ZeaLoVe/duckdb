@@ -8,7 +8,7 @@ statement ok
 SET wal_autocheckpoint='1TB';
 
 statement ok
-create table test (id bigint primary key, c1 text);
+create table test (id bigint , c1 text);
 
 statement ok
 insert into test (id, c1) values (1, 'foo');

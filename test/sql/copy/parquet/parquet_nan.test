@@ -2,7 +2,7 @@
 # description: Read a parquet file with an invalid float value (infinity)
 # group: [parquet]
 
-require parquet
+
 
 query TTT
 select * from parquet_scan('data/parquet-testing/nan-float.parquet') order by 1

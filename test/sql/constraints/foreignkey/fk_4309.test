@@ -2,8 +2,7 @@
 # description: Issue #4309: Foreign key constraints are not honored when deleting rows from the parent table in the presence of multiple such constraints
 # group: [foreignkey]
 
-statement ok
-PRAGMA enable_verification
+
 
 # fks:
 # d -> a

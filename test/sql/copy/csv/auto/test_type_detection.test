@@ -2,7 +2,7 @@
 # description: Test csv type detection
 # group: [auto]
 
-require vector_size 512
+
 
 # a CSV file with many strings
 statement ok

@@ -2,9 +2,9 @@
 # description: Test queries on tricky parquet files over http. Note: on GH connection issues, these tests fail silently
 # group: [parquet]
 
-require parquet
 
-require httpfs
+
+
 
 # /data/parquet-testing/bug1554.parquet
 query I

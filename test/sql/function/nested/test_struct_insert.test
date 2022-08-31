@@ -2,8 +2,7 @@
 # description: Test the struct_insert function
 # group: [nested]
 
-statement ok
-pragma enable_verification
+
 
 # test basic insertion into a struct
 query T

@@ -3,7 +3,7 @@
 # group: [unique]
 
 statement ok
-CREATE TABLE integers(i INTEGER PRIMARY KEY, j INTEGER UNIQUE)
+CREATE TABLE integers(i INTEGER , j INTEGER UNIQUE)
 
 # no constraints are violated
 statement ok

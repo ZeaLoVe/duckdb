@@ -2,10 +2,9 @@
 # description: Range functionality tests. Taken from sqlite test/window8.test
 # group: [window]
 
-require vector_size 512
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CREATE TABLE t1(a REAL, b INTEGER);
@@ -946,7 +945,7 @@ statement ok
 DROP TABLE IF EXISTS map;
 
 statement ok
-CREATE TABLE map(v INTEGER PRIMARY KEY, t TEXT);
+CREATE TABLE map(v INTEGER , t TEXT);
 
 statement ok
 INSERT INTO map VALUES

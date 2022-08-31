@@ -3,7 +3,7 @@
 # group: [primarykey]
 
 statement ok
-CREATE TABLE tst(a varchar, b varchar,PRIMARY KEY(a,b))
+CREATE TABLE tst(a varchar, b varchar
 
 # insert two conflicting pairs at the same time
 statement error

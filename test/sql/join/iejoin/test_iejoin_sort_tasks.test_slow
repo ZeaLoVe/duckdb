@@ -5,12 +5,11 @@
 # No verification - it doesn't scale
 
 # Otherwise we run out of memory
-require 64bit
 
-statement ok
-PRAGMA verify_parallelism
 
-# Stream tables with minimal overlap that require merge tasks on both sides.
+
+
+# Stream tables with minimal overlap that 
 query II
 SELECT lhs.begin, rhs.begin
 FROM (

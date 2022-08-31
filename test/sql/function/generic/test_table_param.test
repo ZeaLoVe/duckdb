@@ -4,8 +4,7 @@
 
 # scalar stats
 
-statement ok
-pragma enable_verification
+
 
 statement ok
 create table a (i double, j double);
@@ -23,11 +22,9 @@ SELECT * FROM summary((SELECT * FROM a))
 [42.0, 420.0]	42.0	420.0
 
 
-statement ok
-pragma threads=4
 
-statement ok
-pragma verify_parallelism
+
+
 
 query III
 SELECT * FROM summary((SELECT * FROM a))

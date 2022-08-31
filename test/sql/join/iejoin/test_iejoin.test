@@ -2,8 +2,7 @@
 # description: Test IEJoin
 # group: [iejoin]
 
-statement ok
-PRAGMA enable_verification
+
 
 # Restrictive tail predicates
 # Use inequalities to prevent future range choice optimisation

@@ -2,8 +2,7 @@
 # description: Test join with nested types for the keys
 # group: [join]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE VIEW list_int AS

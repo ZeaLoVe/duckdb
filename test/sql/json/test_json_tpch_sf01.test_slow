@@ -2,9 +2,9 @@
 # description: Test TPCH with JSON
 # group: [json]
 
-require json
 
-require tpch
+
+
 
 statement ok
 call dbgen(sf=0.1)

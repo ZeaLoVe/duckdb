@@ -3,9 +3,9 @@
 # group: [storage]
 
 # this is a test of the test suite
-# we require an extension to be loaded, then verify that the extension is correctly loaded on restart
+# we 
 
-require parquet
+
 
 # we can load a parquet file
 query ITIIIIRRTTT nosort parquet_scan_result

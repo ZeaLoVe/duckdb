@@ -2,8 +2,7 @@
 # description: Test STRING_AGG operator
 # group: [aggregates]
 
-statement ok
-PRAGMA enable_verification
+
 
 # test incorrect usage of STRING_AGG function
 
@@ -86,8 +85,7 @@ SELECT g, GROUP_CONCAT(x) FROM strings GROUP BY g ORDER BY g
 #
 
 # Impervious to threading
-statement ok
-PRAGMA verify_parallelism
+
 
 # Single group
 query TT

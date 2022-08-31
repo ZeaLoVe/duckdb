@@ -2,8 +2,7 @@
 # description: Booleans and NULLs
 # group: [null]
 
-statement ok
-PRAGMA enable_verification
+
 
 # AND
 query TTTTTTTTT

@@ -2,9 +2,9 @@
 # description: Test auto-casting to table types in COPY from parquet file
 # group: [parquet]
 
-require parquet
 
-require tpch
+
+
 
 statement ok
 CREATE SCHEMA tpch

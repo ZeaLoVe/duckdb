@@ -2,9 +2,9 @@
 # description: Issue #2261: TPC-H Q6 fails on Parquet input
 # group: [parquet]
 
-require tpch
 
-require parquet
+
+
 
 statement ok
 CREATE TABLE lineitem AS SELECT * FROM 'data/parquet-testing/arrow/lineitem-arrow.parquet'

@@ -14,7 +14,7 @@
 # 
 # ref.write.parquet("p2.parquet")
 
-require parquet
+
 
 
 query I

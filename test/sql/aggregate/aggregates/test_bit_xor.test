@@ -2,7 +2,7 @@
 # description: Test BIT_XOR operator
 # group: [aggregates]
 
-require skip_reload
+
 
 # test on scalar values
 query II

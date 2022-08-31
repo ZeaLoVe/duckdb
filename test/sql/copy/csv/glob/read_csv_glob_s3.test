@@ -2,7 +2,7 @@
 # description: Test globbing CSVs over s3
 # group: [glob]
 
-require httpfs
+
 
 require-env S3_TEST_SERVER_AVAILABLE 1
 

@@ -2,7 +2,7 @@
 # description: Test duckdb_settings function with extensions
 # group: [table_function]
 
-require parquet
+
 
 statement ok
 SELECT * FROM duckdb_settings();

@@ -2,8 +2,7 @@
 # description: Test correct behavior of various string functions under complex unicode characters
 # group: [string]
 
-statement ok
-PRAGMA enable_verification
+
 
 # length with grapheme clusters
 query I

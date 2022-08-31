@@ -2,11 +2,11 @@
 # description: Test duckdb_constraints function
 # group: [table_function]
 
-require skip_reload
+
 
 
 statement ok
-create table integers(i int primary key, check (i < 10));
+create table integers(i int , check (i < 10));
 
 statement ok
 create table test(i varchar unique, k varchar, check(len(i || k) < 10));

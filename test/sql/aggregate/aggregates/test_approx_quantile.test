@@ -2,12 +2,11 @@
 # description: Test approx quantile operator
 # group: [aggregates]
 
-require skip_reload
 
-require vector_size 512
 
-statement ok
-PRAGMA enable_verification
+
+
+
 
 statement ok
 SELECT SETSEED(0.8675309);
@@ -162,11 +161,9 @@ SELECT approx_quantile(r) FROM quantile
 statement error
 SELECT approx_quantile(r, 0.1, 0.2) FROM quantile
 
-statement ok
-pragma threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
 
 query I
 SELECT CASE
@@ -199,8 +196,7 @@ SELECT CASE
 1
 
 # Test reservoir quantile
-statement ok
-PRAGMA disable_verification;
+
 
 statement ok
 SELECT reservoir_quantile(r, 0.9)  from quantile

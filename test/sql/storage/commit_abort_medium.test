@@ -10,11 +10,10 @@ load __TEST_DIR__/commit_abort.db
 # primary index construction. It should be re-enabled when deleted tuples are properly vacuumed.
 mode skip
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
-CREATE TABLE test (a INTEGER PRIMARY KEY, b INTEGER, c VARCHAR);
+CREATE TABLE test (a INTEGER , b INTEGER, c VARCHAR);
 
 statement ok
 INSERT INTO test VALUES (11, 22, 'hello'), (13, 22, 'world'), (12, 21, 'test'), (10, NULL, NULL);
@@ -75,8 +74,7 @@ SELECT * FROM test ORDER BY a, b, c
 
 restart
 
-statement ok
-PRAGMA enable_verification
+
 
 query III
 SELECT * FROM test ORDER BY a, b, c

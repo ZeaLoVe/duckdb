@@ -3,9 +3,9 @@
 # group: [vacuum]
 
 # need this, else the distinct stats sampling is different
-require vector_size 1024
 
-require skip_reload
+
+
 
 statement ok
 analyze
@@ -46,14 +46,12 @@ select stats(j) from test limit 1
 [Min: 0, Max: 4999][Has Null: false, Has No Null: true][Approx Unique: 9809]
 
 # we enable verify_parallelism only for ANALYZE
-statement ok
-pragma verify_parallelism
+
 
 statement ok
 analyze test(i)
 
-statement ok
-pragma disable_verify_parallelism
+
 
 # i is more accurate now
 query T
@@ -68,14 +66,12 @@ select stats(j) from test limit 1
 [Min: 0, Max: 4999][Has Null: false, Has No Null: true][Approx Unique: 9809]
 
 # now we analyze the whole table
-statement ok
-pragma verify_parallelism
+
 
 statement ok
 analyze test
 
-statement ok
-pragma disable_verify_parallelism
+
 
 # both i and j should be more accurate
 query T

@@ -47,7 +47,7 @@ select [-100::INTEGER, 3000000000::UINTEGER];
 ----
 [-100, 3000000000]
 
-#results in HUGEINT
+#results in BIGINT
 query I
 select [-100::BIGINT, 9999999999999999999::UBIGINT];
 ----

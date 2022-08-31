@@ -2,7 +2,7 @@
 # description: Issue #2543: Case insensitive replacement scan
 # group: [parquet]
 
-require parquet
+
 
 query I
 SELECT data FROM 'data/parquet-testing/CASE_INSENSITIVE.PARQUET'

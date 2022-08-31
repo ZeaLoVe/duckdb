@@ -2,8 +2,7 @@
 # description: Test IEJoin
 # group: [iejoin]
 
-statement ok
-PRAGMA enable_verification
+
 
 # create tables
 statement ok

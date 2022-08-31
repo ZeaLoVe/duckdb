@@ -2,16 +2,14 @@
 # description: Statistics propagation test with filters
 # group: [statistics]
 
-foreach type utinyint usmallint uinteger ubigint tinyint smallint integer bigint hugeint float double
+foreach type utinyint usmallint uinteger ubigint tinyint smallint integer bigint BIGINT float double
 
 statement ok
 CREATE TABLE integers AS SELECT i::${type} i FROM (VALUES (1), (2), (3)) tbl(i);
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
 
-statement ok
-PRAGMA enable_verification
+
+
 
 # = filter is out of range
 query II

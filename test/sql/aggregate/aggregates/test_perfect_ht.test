@@ -2,11 +2,9 @@
 # description: Test aggregates that can trigger a perfect HT
 # group: [aggregates]
 
-statement ok
-PRAGMA enable_verification
 
-statement ok
-PRAGMA perfect_ht_threshold=20;
+
+
 
 statement ok
 CREATE TABLE timeseries(year INTEGER, val INTEGER);
@@ -63,8 +61,7 @@ SELECT COUNT(DISTINCT i), MIN(i), MAX(i), SUM(i) / COUNT(i) FROM (SELECT t::SMAL
 65535	-32767	32767	0
 
 # test result ordering of perfect HT
-statement ok
-PRAGMA disable_verification
+
 
 statement ok
 create table dates as select date '1992-01-01' + concat(i, ' months')::interval as d from range(100) tbl(i);

@@ -2,8 +2,7 @@
 # description: Test QUANTILE_DISC aggregate
 # group: [aggregates]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE quantile as
@@ -187,11 +186,9 @@ SELECT quantile_disc(r, 0.1, 50) FROM quantile
 statement error
 SELECT quantile_cont(r, q) FROM quantile
 
-statement ok
-pragma threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
 
 # single GROUP
 query III

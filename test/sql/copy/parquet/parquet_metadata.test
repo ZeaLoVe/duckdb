@@ -2,7 +2,7 @@
 # description: Test parquet metadata function
 # group: [parquet]
 
-require parquet
+
 
 statement ok
 SELECT * FROM parquet_metadata('data/parquet-testing/lineitem-top10000.gzip.parquet');

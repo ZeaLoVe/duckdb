@@ -2,8 +2,7 @@
 # description: Tinyint try cast
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 # tinyint casts
 statement ok
@@ -97,7 +96,7 @@ SELECT i::BIGINT::TINYINT FROM tinyints ORDER BY i
 127
 
 query I
-SELECT i::HUGEINT::TINYINT FROM tinyints ORDER BY i
+SELECT i::BIGINT::TINYINT FROM tinyints ORDER BY i
 ----
 -128
 0

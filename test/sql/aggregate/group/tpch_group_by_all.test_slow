@@ -2,7 +2,7 @@
 # description: Test TPC-H SF0.01 GROUP BY ALL
 # group: [group]
 
-require tpch
+
 
 statement ok
 CALL dbgen(sf=0.01);

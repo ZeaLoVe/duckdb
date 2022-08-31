@@ -3,7 +3,7 @@
 # group: [drop_col]
 
 statement ok
-CREATE TABLE test(i INTEGER PRIMARY KEY, j INTEGER)
+CREATE TABLE test(i INTEGER , j INTEGER)
 
 statement ok
 INSERT INTO test VALUES (1, 1), (2, 2)

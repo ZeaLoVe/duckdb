@@ -1,16 +1,16 @@
-# name: test/sql/storage/types/test_hugeint_storage.test
-# description: Test HUGEINT with persistent storage
+# name: test/sql/storage/types/test_BIGINT_storage.test
+# description: Test BIGINT with persistent storage
 # group: [types]
 
 # load the DB from disk
-load __TEST_DIR__/hugeint_storage_test.db
+load __TEST_DIR__/BIGINT_storage_test.db
 
-# create a table with hugeints
+# create a table with BIGINTs
 statement ok
-CREATE TABLE hugeints (h HUGEINT);
+CREATE TABLE BIGINTs (h BIGINT);
 
 statement ok
-INSERT INTO hugeints VALUES (1043178439874412422424), (42), (NULL), (47289478944894789472897441242);
+INSERT INTO BIGINTs VALUES (1043178439874412422424), (42), (NULL), (47289478944894789472897441242);
 
 # reload the database from disk a few times, and check that the data is still there
 loop i 0 2
@@ -18,7 +18,7 @@ loop i 0 2
 restart
 
 query I
-SELECT * FROM hugeints
+SELECT * FROM BIGINTs
 ----
 1043178439874412422424
 42
@@ -26,12 +26,12 @@ NULL
 47289478944894789472897441242
 
 query I
-SELECT * FROM hugeints WHERE h = 42
+SELECT * FROM BIGINTs WHERE h = 42
 ----
 42
 
 query I
-SELECT h FROM hugeints WHERE h < 10 ORDER BY 1;
+SELECT h FROM BIGINTs WHERE h < 10 ORDER BY 1;
 ----
 
 endloop

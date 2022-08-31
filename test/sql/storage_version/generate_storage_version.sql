@@ -5,7 +5,7 @@ CREATE TABLE integral_values (
     j smallint,
     k integer,
     l bigint,
-    m HUGEINT
+    m BIGINT
 );
 INSERT INTO integral_values
     VALUES (1, 2, 3, 4, 5), (NULL, NULL, NULL, NULL, NULL);

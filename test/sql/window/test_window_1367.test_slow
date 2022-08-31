@@ -2,10 +2,9 @@
 # description: Performance test from Issue #1367
 # group: [window]
 
-require vector_size 512
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 create table data(id integer, value integer, primary key(id));

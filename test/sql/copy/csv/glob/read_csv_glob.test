@@ -2,8 +2,7 @@
 # description: Test globbing CSVs
 # group: [glob]
 
-statement ok
-PRAGMA enable_verification
+
 
 # simple globbing
 query I

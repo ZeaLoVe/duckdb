@@ -26,7 +26,7 @@ statement error
 COPY test_zst FROM 'test/sql/copy/csv/broken/test.csv.zst' (COMPRESSION UNKNOWN);
 
 # zstd works once we load the parquet extension
-require parquet
+
 
 statement ok
 COPY test_zst FROM 'test/sql/copy/csv/broken/test.csv.zst' (COMPRESSION ZSTD, HEADER);

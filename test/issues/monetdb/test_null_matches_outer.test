@@ -2,8 +2,7 @@
 # description: MonetDB Test: null_matches_in_outer.Bug-6398.sql
 # group: [monetdb]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 create table "E" ("intCol" bigint, "stringCol" varchar);

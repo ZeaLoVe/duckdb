@@ -2,10 +2,9 @@
 # description: Strings tests
 # group: [writer]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CREATE TABLE strings(s VARCHAR);

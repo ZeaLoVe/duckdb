@@ -2,8 +2,7 @@
 # description: Test floored division and modulus
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE rs(x DOUBLE, y INTEGER)

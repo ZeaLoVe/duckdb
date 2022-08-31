@@ -2,7 +2,7 @@
 # description: Prepared statements and subqueries
 # group: [prepared]
 
-require skip_reload
+
 
 
 # simple subquery

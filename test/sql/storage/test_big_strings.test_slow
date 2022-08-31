@@ -8,8 +8,7 @@ load __TEST_DIR__/test_dictionary.db
 statement ok
 CREATE TABLE big_string (a VARCHAR, id INT);
 
-statement ok
-pragma force_compression='uncompressed'
+
 
 statement ok
 INSERT INTO big_string values (repeat('a', 8000), 1);

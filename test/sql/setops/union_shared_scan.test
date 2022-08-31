@@ -2,11 +2,9 @@
 # description: Test shared scan over a union
 # group: [setops]
 
-statement ok
-PRAGMA threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
 
 statement ok
 CREATE TABLE tbl AS SELECT * FROM range(10000) tbl(i) UNION ALL SELECT NULL

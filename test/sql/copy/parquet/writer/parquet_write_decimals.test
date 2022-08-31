@@ -2,10 +2,9 @@
 # description: Parquet decimal types round trip
 # group: [writer]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CREATE TABLE decimals(
@@ -78,8 +77,7 @@ SELECT * FROM '__TEST_DIR__/decimals.parquet' WHERE ${dec_column}=43
 endloop
 
 # check statistics
-statement ok
-PRAGMA disable_verification
+
 
 query IIII
 SELECT stats(dec4), stats(dec9), stats(dec18), stats(dec38) FROM '__TEST_DIR__/decimals.parquet' LIMIT 1

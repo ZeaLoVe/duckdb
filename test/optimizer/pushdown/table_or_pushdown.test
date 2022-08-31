@@ -2,8 +2,7 @@
 # description: Test Table OR Filter Push Down
 # group: [pushdown]
 
-statement ok
-PRAGMA enable_verification
+
 
 # FIXME: re-enable when OR pushdown is fixed
 mode skip
@@ -322,8 +321,7 @@ SELECT * FROM integers WHERE a!=10 OR a>3
 5	5
 
 # Testing the number of rows filtered (column "a" has five values: 1 .. 5)
-statement ok
-PRAGMA enable_profiling
+
 
 # should return 2 rows: 1 and 5
 query II
@@ -337,8 +335,7 @@ EXPLAIN ANALYZE SELECT a FROM integers WHERE a<2 OR a>5
 ----
 analyzed_plan	<REGEX>:.*SEQ_SCAN.*Filters: a<2 OR a>5.*1[ \t].*
 
-statement ok
-PRAGMA disable_profiling
+
 
 # notequal and min == max && min == constant
 statement ok

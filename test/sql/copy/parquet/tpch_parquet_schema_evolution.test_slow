@@ -2,9 +2,9 @@
 # description: Test more complex type evolution on TPC-H schema
 # group: [parquet]
 
-require parquet
 
-require tpch
+
+
 
 statement ok
 CREATE SCHEMA tpch
@@ -46,7 +46,7 @@ COPY (
 	l_returnflag,
 	l_extendedprice::DECIMAL(18,4) l_extendedprice,
 	l_partkey::BIGINT l_partkey,
-	l_orderkey::HUGEINT l_orderkey,
+	l_orderkey::BIGINT l_orderkey,
 	l_discount::DECIMAL(8,3) l_discount,
 	l_shipdate::TIMESTAMP l_shipdate,
 	l_tax FROM tpch.lineitem OFFSET 30000

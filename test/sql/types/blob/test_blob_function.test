@@ -2,8 +2,7 @@
 # description: BLOB with Functions
 # group: [blob]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE blobs (b BYTEA);

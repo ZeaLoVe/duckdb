@@ -1,9 +1,10 @@
+# confused
+
 # name: test/issues/rigger/double_bigint_cast_overflow.test
 # description: SQLancer bug that detected a sanitizer trigger when casting a double to a bigint
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 query I
 select 9.2233720368547750E+18::int8;
@@ -17,7 +18,7 @@ statement error
 select 9.2233720368547758E+18::int8;
 
 statement error
-select 2147483648::real::int4;
+select 2147483648::real::int8;
 
 statement error
-select 2147483648::double::int4;
+select 2147483648::double::int8;

@@ -1,9 +1,10 @@
+# unspported
+
 # name: test/sql/aggregate/distinct/test_distinct_on.test
 # description: Test DISTINCT ON
 # group: [distinct]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE integers(i INTEGER, j INTEGER, k INTEGER);

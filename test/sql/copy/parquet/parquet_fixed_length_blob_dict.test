@@ -2,7 +2,7 @@
 # description: Parquet file with dictionary of fixed length byte arrays
 # group: [parquet]
 
-require parquet
+
 
 query IIIIIIIIIIII
 SELECT

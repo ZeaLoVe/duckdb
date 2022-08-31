@@ -13,10 +13,9 @@ def generate_header(f):
 # description: Test Parquet Reader with files on data/parquet-testing
 # group: [parquet]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 ''')
 

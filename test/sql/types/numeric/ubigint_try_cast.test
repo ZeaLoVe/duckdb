@@ -2,8 +2,7 @@
 # description: ubigint try cast
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 # ubigint casts
 statement ok
@@ -75,7 +74,7 @@ SELECT TRY_CAST(i AS BIGINT) FROM ubigints ORDER BY i
 NULL
 
 query I
-SELECT i::HUGEINT FROM ubigints ORDER BY i
+SELECT i::BIGINT FROM ubigints ORDER BY i
 ----
 0
 18446744073709551615

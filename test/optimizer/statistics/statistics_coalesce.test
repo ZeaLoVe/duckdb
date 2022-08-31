@@ -2,11 +2,9 @@
 # description: Test statistics propagation in COALESCE expression
 # group: [statistics]
 
-statement ok
-PRAGMA enable_verification;
+;
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 statement ok
 CREATE TABLE integers AS SELECT * FROM (VALUES (1), (2), (3)) tbl(i);
@@ -98,8 +96,7 @@ SELECT * FROM integers WHERE (COALESCE(i, 4, 17)=3);
 3
 
 # random needs disabled verification
-statement ok
-PRAGMA disable_verification
+
 
 # coalesce without stats
 statement ok

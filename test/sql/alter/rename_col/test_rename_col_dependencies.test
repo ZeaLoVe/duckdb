@@ -2,7 +2,7 @@
 # description: Test ALTER TABLE RENAME COLUMN and dependencies
 # group: [rename_col]
 
-require skip_reload
+
 
 
 statement ok

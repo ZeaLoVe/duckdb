@@ -2,7 +2,7 @@
 # description: PREPARE for SELECT clause
 # group: [prepared]
 
-require skip_reload
+
 
 
 statement ok

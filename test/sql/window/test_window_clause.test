@@ -2,10 +2,9 @@
 # description: Most basic window function
 # group: [window]
 
-require vector_size 512
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 create table integers as select range i from range(0,16);

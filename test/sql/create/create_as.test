@@ -2,8 +2,7 @@
 # description: Test CREATE TABLE AS SELECT (CTAS) statements
 # group: [create]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE tbl1 AS SELECT 1;
@@ -22,7 +21,7 @@ SELECT * FROM tbl2;
 2
 
 statement ok
-CREATE OR REPLACE TABLE tbl3 AS SELECT 3;
+CREATE TABLE tbl3 AS SELECT 3;
 
 query I
 SELECT * FROM tbl3;
@@ -33,7 +32,7 @@ statement error
 CREATE TABLE tbl1 AS SELECT 3;
 
 statement ok
-CREATE OR REPLACE TABLE tbl1 AS SELECT 4;
+CREATE TABLE tbl1 AS SELECT 4;
 
 query I
 SELECT * FROM tbl1;
@@ -41,7 +40,7 @@ SELECT * FROM tbl1;
 4
 
 statement ok
-CREATE OR REPLACE TABLE tbl1 AS SELECT 'hello' UNION ALL SELECT 'world';
+CREATE TABLE tbl1 AS SELECT 'hello' UNION ALL SELECT 'world';
 
 query I
 SELECT * FROM tbl1;
@@ -50,7 +49,7 @@ hello
 world
 
 statement ok
-CREATE OR REPLACE TABLE tbl1 AS SELECT 5 WHERE false;
+CREATE TABLE tbl1 AS SELECT 5 WHERE false;
 
 query I
 SELECT * FROM tbl1;
@@ -60,4 +59,4 @@ statement error
 CREATE TABLE tbl4 IF NOT EXISTS AS SELECT 4;
 
 statement error
-CREATE OR REPLACE TABLE tbl4 IF NOT EXISTS AS SELECT 4;
+CREATE TABLE tbl4 IF NOT EXISTS AS SELECT 4;

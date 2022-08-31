@@ -1,15 +1,14 @@
-# name: test/sql/order/hugeint_order_by_extremes.test
-# description: Issue #3471: Select fails when ordering on hugeint column
+# name: test/sql/order/BIGINT_order_by_extremes.test
+# description: Issue #3471: Select fails when ordering on BIGINT column
 # group: [order]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
-CREATE TABLE test (a hugeint);
+CREATE TABLE test (a BIGINT);
 
 statement ok
-INSERT INTO test values (-170141183460469231731687303715884105727::hugeint), (-1111::hugeint), (-1::hugeint), (0::hugeint), (1::hugeint), (1111::hugeint);
+INSERT INTO test values (-170141183460469231731687303715884105727::BIGINT), (-1111::BIGINT), (-1::BIGINT), (0::BIGINT), (1::BIGINT), (1111::BIGINT);
 
 query I
 SELECT * FROM test order by a;

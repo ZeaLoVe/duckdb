@@ -2,10 +2,9 @@
 # description: Test top-n queries on TPC-DS
 # group: [tpcds]
 
-require tpcds
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CALL dsdgen(sf=1);

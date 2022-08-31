@@ -2,10 +2,9 @@
 # description: Test MEDIAN and QUANTILE aggregates as window functions
 # group: [window]
 
-require vector_size 512
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 create table quantiles as select range r from range(10) union all values (NULL), (NULL), (NULL);
@@ -447,8 +446,7 @@ ORDER BY 1, 2
 
 foreach windowmode "window" "combine" "separate"
 
-statement ok
-PRAGMA debug_window_mode=${windowmode}
+
 
 query II
 WITH t(r, i, p, f) AS (VALUES

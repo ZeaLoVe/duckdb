@@ -2,8 +2,7 @@
 # description: Test conjunction statements that can be simplified
 # group: [expression]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE integers(i INTEGER);

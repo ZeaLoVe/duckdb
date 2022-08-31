@@ -2,7 +2,7 @@
 # description: Test duckdb_tables function
 # group: [table_function]
 
-require skip_reload
+
 
 
 query I
@@ -14,7 +14,7 @@ statement ok
 CREATE TABLE integers(i INTEGER)
 
 statement ok
-CREATE TABLE pk(i INTEGER PRIMARY KEY, j VARCHAR, CHECK(i<100))
+CREATE TABLE pk(i INTEGER , j VARCHAR, CHECK(i<100))
 
 statement ok
 CREATE SCHEMA myschema;

@@ -2,11 +2,11 @@
 # description: Test all tpcds queries on tpch sf0.01 over s3
 # group: [s3]
 
-require parquet
 
-require httpfs
 
-require tpcds
+
+
+
 
 require-env S3_TEST_SERVER_AVAILABLE 1
 
@@ -18,8 +18,7 @@ SET s3_secret_access_key='S3RVER';SET s3_access_key_id='S3RVER';SET s3_region='e
 
 # answers are generated from postgres
 # hence check with NULLS LAST flag
-statement ok
-PRAGMA default_null_order='NULLS LAST'
+
 
 statement ok
 CREATE SCHEMA tpcds;

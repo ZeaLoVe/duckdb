@@ -19,7 +19,7 @@
 # for now
 mode skip
 
-require parquet
+
 
 
 query I

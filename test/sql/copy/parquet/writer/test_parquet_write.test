@@ -2,7 +2,7 @@
 # description: Parquet basic write
 # group: [writer]
 
-require parquet
+
 
 statement ok
 COPY (SELECT 42) TO '__TEST_DIR__/scalar.parquet' (FORMAT 'parquet');

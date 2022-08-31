@@ -2,16 +2,13 @@
 # description: SQL Server functions tests
 # group: [sqlserver]
 
-require vector_size 512
 
-statement ok
-PRAGMA default_null_order='NULLS LAST'
 
-statement ok
-PRAGMA threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
+
+
 
 statement ok
 CREATE SCHEMA Sales;

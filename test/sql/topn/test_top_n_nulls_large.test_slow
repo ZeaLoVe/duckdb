@@ -2,8 +2,7 @@
 # description: Test Top N NULLS FIRST/LAST with many rows
 # group: [topn]
 
-statement ok
-PRAGMA enable_verification
+
 
 # we execute this set of tests twice
 # the data is the same, but organized different physically
@@ -11,8 +10,7 @@ PRAGMA enable_verification
 # then the nulls are at the beginning of the table
 # all the results should stay the same
 
-statement ok
-PRAGMA threads=4
+
 
 statement ok
 CREATE TABLE integers AS SELECT i, i j FROM range(1000000) tbl(i) UNION ALL SELECT NULL i, range j FROM range(1000000)

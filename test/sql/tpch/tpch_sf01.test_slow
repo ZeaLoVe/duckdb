@@ -2,7 +2,7 @@
 # description: Test TPC-H SF0.1
 # group: [tpch]
 
-require tpch
+
 
 statement ok
 CALL dbgen(sf=0.1);

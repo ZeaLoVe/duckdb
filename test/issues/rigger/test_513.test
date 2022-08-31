@@ -1,9 +1,10 @@
+# done
+
 # name: test/issues/rigger/test_513.test
 # description: Issue 513
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 # LEFT JOIN with comparison on integer columns results in 'Not implemented: Unimplemented type for nested loop
 # join!'

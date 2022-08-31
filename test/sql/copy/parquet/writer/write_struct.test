@@ -2,7 +2,7 @@
 # description: Parquet write struct
 # group: [writer]
 
-require parquet
+
 
 # standard struct
 statement ok

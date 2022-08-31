@@ -2,10 +2,9 @@
 # description: Parquet timestamp round trip
 # group: [writer]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 foreach type TIMESTAMP TIMESTAMP_MS TIMESTAMP_NS TIMESTAMP_S
 

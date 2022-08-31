@@ -4,8 +4,7 @@
 
 # NOTE: some of these tests are directly taken from the Presto Array Function examples
 
-statement ok
-PRAGMA enable_verification
+
 
 # test NULLs and simple cases
 

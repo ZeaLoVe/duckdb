@@ -2,8 +2,7 @@
 # description: Test between statement with expressions that have side effects
 # group: [generic]
 
-statement ok
-PRAGMA enable_verification
+
 
 # prepared statement with BETWEEN
 statement ok

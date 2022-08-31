@@ -11,11 +11,9 @@ CREATE TABLE integers2 AS SELECT * FROM (VALUES (4), (5), (6)) tbl(i);
 statement ok
 CREATE TABLE integers3 AS SELECT * FROM (VALUES (4), (5), (NULL)) tbl(i);
 
-statement ok
-PRAGMA enable_verification;
+;
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 # union all
 # total min/max after union all is [1, 6]: 7 is out of bounds, so i=7 can be optimized away

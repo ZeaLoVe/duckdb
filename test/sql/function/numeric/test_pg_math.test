@@ -4,8 +4,7 @@
 
 # see https://www.postgresql.org/docs/10/functions-math.html
 
-statement ok
-PRAGMA enable_verification
+
 
 query R
 select abs(-17.4)

@@ -2,8 +2,7 @@
 # description: Test binding parameters with union expressions
 # group: [setops]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE test(a INTEGER);

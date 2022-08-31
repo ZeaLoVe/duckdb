@@ -2,7 +2,7 @@
 # description: Issue #2267: "Struct child row count mismatch" on parquet read
 # group: [parquet]
 
-require parquet
+
 
 query I
 SELECT * FROM parquet_scan('data/parquet-testing/bug2267.parquet')

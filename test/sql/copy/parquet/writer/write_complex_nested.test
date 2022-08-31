@@ -2,7 +2,7 @@
 # description: Parquet write complex structures
 # group: [writer]
 
-require parquet
+
 
 # struct of lists
 statement ok

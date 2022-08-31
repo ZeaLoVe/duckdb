@@ -2,7 +2,7 @@
 # description: Test ICU age functionality
 # group: [timestamp]
 
-require icu
+
 
 statement ok
 SET TimeZone = 'America/Los_Angeles';

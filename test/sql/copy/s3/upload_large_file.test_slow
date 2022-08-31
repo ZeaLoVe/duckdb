@@ -2,11 +2,11 @@
 # description: Copy large csv/parquet files from and to S3.
 # group: [s3]
 
-require tpch
 
-require parquet
 
-require httpfs
+
+
+
 
 require-env S3_TEST_SERVER_AVAILABLE 1
 

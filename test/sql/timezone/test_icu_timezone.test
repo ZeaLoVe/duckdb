@@ -2,7 +2,7 @@
 # description: Test the ICU TimeZone interface
 # group: [timezone]
 
-require icu
+
 
 statement ok
 SET TimeZone = 'America/Los_Angeles';

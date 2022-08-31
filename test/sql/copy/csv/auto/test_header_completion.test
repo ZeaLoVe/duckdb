@@ -2,7 +2,7 @@
 # description: Test csv header completion
 # group: [auto]
 
-require vector_size 512
+
 
 # CSV file with one missing header
 statement ok

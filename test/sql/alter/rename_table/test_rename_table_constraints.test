@@ -4,7 +4,7 @@
 
 # create a table with a check constraint
 statement ok
-CREATE TABLE tbl(i INTEGER PRIMARY KEY, j INTEGER CHECK(j < 10))
+CREATE TABLE tbl(i INTEGER , j INTEGER CHECK(j < 10))
 
 # check primary key constrain
 statement ok

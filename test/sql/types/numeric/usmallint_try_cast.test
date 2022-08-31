@@ -2,8 +2,7 @@
 # description: usmallint try cast
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 # smallint casts
 statement ok
@@ -63,7 +62,7 @@ SELECT i::BIGINT FROM usmallints ORDER BY i
 65535
 
 query I
-SELECT i::HUGEINT::USMALLINT FROM usmallints ORDER BY i
+SELECT i::BIGINT::USMALLINT FROM usmallints ORDER BY i
 ----
 0
 65535

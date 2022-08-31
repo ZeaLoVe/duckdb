@@ -2,7 +2,7 @@
 # description: CREATE TABLE from parquet crashes latest bleeding edge
 # group: [parquet]
 
-require parquet
+
 
 query I nosort query
 select * from 'data/parquet-testing/leftdate3_192_loop_1.parquet'

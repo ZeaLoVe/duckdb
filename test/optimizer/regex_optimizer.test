@@ -8,8 +8,7 @@ CREATE TABLE test(s VARCHAR);
 statement ok
 INSERT INTO test VALUES ('aaa');
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 
 # contains optimization: /aaa/ -> contains(aaa)

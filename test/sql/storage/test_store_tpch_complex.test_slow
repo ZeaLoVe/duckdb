@@ -2,13 +2,12 @@
 # description: Test storing TPC-H with several complex operations
 # group: [storage]
 
-require tpch
+
 
 # load the DB from disk
 load __TEST_DIR__/tpch_store.db
 
-statement ok
-PRAGMA force_checkpoint;
+
 
 statement ok
 CALL dbgen(sf=0.01);
@@ -23,8 +22,7 @@ loop i 0 3
 
 restart
 
-statement ok
-PRAGMA force_checkpoint;
+
 
 query I
 select count(*) from lineitem;
@@ -43,8 +41,7 @@ endloop
 
 restart
 
-statement ok
-PRAGMA force_checkpoint;
+
 
 # now add a column
 statement ok

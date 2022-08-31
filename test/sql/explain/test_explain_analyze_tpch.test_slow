@@ -2,13 +2,12 @@
 # description: Test explain analyze TPC-H
 # group: [explain]
 
-require tpch
+
 
 statement ok
 CALL dbgen(sf=0.01);
 
-statement ok
-PRAGMA enable_profiling
+
 
 loop i 0 2
 
@@ -37,7 +36,6 @@ ORDER BY
 ----
 analyzed_plan	<REGEX>:.*lineitem.*
 
-statement ok
-PRAGMA disable_profiling
+
 
 endloop

@@ -2,14 +2,11 @@
 # description: Test parallel table creation
 # group: [table]
 
-statement ok
-PRAGMA enable_verification
 
-statement ok
-PRAGMA threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
+
 
 statement ok
 CREATE TABLE test AS (SELECT string_agg(range, '🦆 ') AS s, mod(range, 10000) xx FROM range(50000) GROUP BY xx)

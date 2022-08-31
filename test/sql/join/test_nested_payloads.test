@@ -2,8 +2,7 @@
 # description: Test join with nested types in the payload
 # group: [join]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE integers(fk INTEGER)

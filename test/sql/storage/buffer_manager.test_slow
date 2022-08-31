@@ -2,18 +2,15 @@
 # description: Test that the buffer manager correctly frees any memory we use
 # group: [storage]
 
-require skip_reload
+
 
 load
 
-statement ok
-PRAGMA temp_directory=''
 
-statement ok
-PRAGMA threads=1
 
-statement ok
-PRAGMA memory_limit='1MB'
+
+
+
 
 # streaming results do not use any memory
 query II

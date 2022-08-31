@@ -2,8 +2,7 @@
 # description: Test case statement with VARCHAR columns
 # group: [generic]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE tbl AS SELECT i, 'thisisalongstring' || i::VARCHAR s FROM range(10) tbl(i)

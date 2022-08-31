@@ -4,7 +4,7 @@
 
 # https:unicode.org/cldr/charts/28/collation/index.html
 
-require icu
+
 
 # Test correct ordering of the collation af
 

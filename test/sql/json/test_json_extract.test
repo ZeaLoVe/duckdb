@@ -2,10 +2,9 @@
 # description: Test JSON typed extract
 # group: [json]
 
-require json
 
-statement ok
-pragma enable_verification
+
+
 
 query T
 select json_extract('{"my_field": {"my_nested_field": ["goose", "duck"]}}', '/my_field/my_nested_field/1')

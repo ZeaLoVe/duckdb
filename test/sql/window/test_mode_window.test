@@ -2,10 +2,9 @@
 # description: Test MODE aggregate as a window function
 # group: [window]
 
-require vector_size 512
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 create table modes as select range r from range(10) union all values (NULL), (NULL), (NULL);
@@ -144,8 +143,7 @@ NULL	NULL	0
 
 foreach windowmode "window" "combine" "separate"
 
-statement ok
-PRAGMA debug_window_mode=${windowmode}
+
 
 query III
 WITH t(r) AS (VALUES (0), (1), (2), (3), (4), (5), (6), (7), (8), (9), (NULL), (NULL), (NULL))

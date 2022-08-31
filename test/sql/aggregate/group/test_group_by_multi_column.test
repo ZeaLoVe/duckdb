@@ -3,7 +3,7 @@
 # group: [group]
 
 statement ok
-CREATE TABLE integers(i INTEGER, j INTEGER, k INTEGER);
+CREATE TABLE integers(i INTEGER NULL, j INTEGER NULL, k INTEGER NULL);
 
 statement ok
 INSERT INTO integers VALUES (1, 1, 2), (1, 2, 2), (1, 1, 2), (2, 1, 2), (1, 2, 4), (1, 2, NULL);

@@ -1,9 +1,10 @@
+# Done with confused
+
 # name: test/fuzzer/afl/decimal_string_roundtrip.test
 # description: Decimal to string statement verification assertion error
 # group: [afl]
 
-statement ok
-PRAGMA enable_verification
+
 
 query I
 SELECT .0

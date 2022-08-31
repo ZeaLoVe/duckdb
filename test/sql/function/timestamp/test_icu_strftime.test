@@ -2,14 +2,13 @@
 # description: Test sequence overflow
 # group: [timestamp]
 
-require icu
+
 
 # Set a known time zone
 statement ok
 SET TimeZone = 'America/Los_Angeles';
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE timestamps AS SELECT ts::TIMESTAMPTZ AS ts FROM (VALUES

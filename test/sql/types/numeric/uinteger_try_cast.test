@@ -2,8 +2,7 @@
 # description: uinteger try cast
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 # uinteger casts
 statement ok
@@ -69,7 +68,7 @@ SELECT i::BIGINT FROM uintegers ORDER BY i
 4294967295
 
 query I
-SELECT i::HUGEINT FROM uintegers ORDER BY i
+SELECT i::BIGINT FROM uintegers ORDER BY i
 ----
 0
 4294967295

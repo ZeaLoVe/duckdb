@@ -8,8 +8,7 @@ CREATE TABLE integers AS SELECT * FROM (VALUES (1), (2), (NULL)) tbl(i);
 statement ok
 CREATE TABLE integers2 AS SELECT * FROM (VALUES (4), (5), (NULL)) tbl(i);
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 # inner join
 # join cannot match: prune result

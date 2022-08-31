@@ -2,10 +2,9 @@
 # description: Test JSON $ notation
 # group: [json]
 
-require json
 
-statement ok
-pragma enable_verification
+
+
 
 query T
 select json_extract('{"my_field": "duck"}', '$.my_field')

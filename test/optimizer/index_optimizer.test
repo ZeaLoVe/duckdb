@@ -2,8 +2,7 @@
 # description: Test Optimizer uses indexes on point queries
 # group: [optimizer]
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 statement ok
 CREATE TABLE integers(i INTEGER, j INTEGER)

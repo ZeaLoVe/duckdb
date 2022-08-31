@@ -2,7 +2,7 @@
 # description: Test struct storage with default values
 # group: [struct]
 
-require skip_reload
+
 
 
 # load the DB from disk

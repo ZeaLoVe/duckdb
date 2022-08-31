@@ -2,7 +2,7 @@
 # description: Test writing of large blobs into parquet files
 # group: [writer]
 
-require parquet
+
 
 statement ok
 CREATE TABLE large_strings AS SELECT repeat('duckduck', 10000+i) i FROM range(4000) tbl(i);

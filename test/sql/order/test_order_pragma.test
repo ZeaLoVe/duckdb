@@ -2,8 +2,7 @@
 # description: Test ORDER BY PRAGMA
 # group: [order]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE test (a INTEGER, b INTEGER);
@@ -20,8 +19,7 @@ SELECT a FROM test ORDER BY a
 13
 
 # we can change the default with a pragma
-statement ok
-PRAGMA default_order='DESCENDING'
+
 
 query I
 SELECT a FROM test ORDER BY a
@@ -30,8 +28,7 @@ SELECT a FROM test ORDER BY a
 12
 11
 
-statement ok
-PRAGMA default_order='ASC'
+
 
 statement error
 PRAGMA default_order())

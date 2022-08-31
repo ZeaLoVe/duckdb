@@ -2,15 +2,14 @@
 # description: Test TPC-DS SF0
 # group: [tpcds]
 
-require tpcds
+
 
 statement ok
 CALL dsdgen(sf=0)
 
 loop i 1 99
 
-statement ok
-PRAGMA tpcds(${i})
+
 
 endloop
 

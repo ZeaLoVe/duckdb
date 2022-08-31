@@ -2,8 +2,7 @@
 # description: Smallint try cast
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 # smallint casts
 statement ok
@@ -97,7 +96,7 @@ SELECT i::BIGINT::SMALLINT FROM smallints ORDER BY i
 32767
 
 query I
-SELECT i::HUGEINT::SMALLINT FROM smallints ORDER BY i
+SELECT i::BIGINT::SMALLINT FROM smallints ORDER BY i
 ----
 -32768
 0

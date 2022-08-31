@@ -2,10 +2,9 @@
 # description: Group By benchmark (0.5GB - small dataset) from h2oai db-benchmark (https://github.com/h2oai/db-benchmark)
 # group: [db-benchmark]
 
-require httpfs
 
-statement ok
-pragma threads=16
+
+
 
 # 5% nulls
 statement ok

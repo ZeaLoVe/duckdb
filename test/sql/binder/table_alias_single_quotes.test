@@ -2,11 +2,10 @@
 # description: Test table alias with single quotes
 # group: [binder]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
-CREATE TABLE integers(i INTEGER);
+CREATE TABLE integers(i INTEGER NULL);
 
 statement ok
 INSERT INTO integers VALUES (1), (2), (3), (NULL)

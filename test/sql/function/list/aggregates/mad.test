@@ -34,7 +34,7 @@ drop table tinys;
 endloop
 
 # large numerics
-foreach type smallint integer bigint hugeint float double decimal(8,1) decimal(12,1) decimal(18,1) decimal(24,1)
+foreach type smallint integer bigint BIGINT float double decimal(8,1) decimal(12,1) decimal(18,1) decimal(24,1)
 
 statement ok
 create table numerics as select list(r::${type}) as r from range(10000) tbl(r);

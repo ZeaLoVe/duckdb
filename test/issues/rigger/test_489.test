@@ -1,9 +1,8 @@
+# done
+
 # name: test/issues/rigger/test_489.test
 # description: Issue 489
 # group: [rigger]
-
-statement ok
-PRAGMA enable_verification
 
 # A predicate NOT(NULL OR TRUE) unexpectedly evaluates to TRUE
 statement ok

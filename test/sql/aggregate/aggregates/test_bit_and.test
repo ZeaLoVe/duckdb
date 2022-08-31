@@ -2,7 +2,7 @@
 # description: Test BIT_AND operator
 # group: [aggregates]
 
-require skip_reload
+
 
 # test on scalar values
 query II

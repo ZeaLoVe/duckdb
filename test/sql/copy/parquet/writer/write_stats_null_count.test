@@ -2,13 +2,11 @@
 # description: Write null_count stats to Parquet files
 # group: [writer]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification;
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+;
+
+
 
 # null count
 statement ok

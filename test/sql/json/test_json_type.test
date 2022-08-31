@@ -2,10 +2,9 @@
 # description: Test JSON type
 # group: [json]
 
-require json
 
-statement ok
-pragma enable_verification
+
+
 
 # unary type function
 query T

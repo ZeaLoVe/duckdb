@@ -2,8 +2,7 @@
 # description: Recursive CTEs with complex pipelines
 # group: [cte]
 
-statement ok
-PRAGMA enable_verification
+
 
 # recursive CTE with various cross products
 query I
@@ -30,7 +29,7 @@ WITH RECURSIVE t AS
 (
 	SELECT 1 AS x
 UNION
-	SELECT (t1.x + t2.x + t3.x)::HUGEINT AS x
+	SELECT (t1.x + t2.x + t3.x)::BIGINT AS x
 	FROM t t1, t t2, t t3
 	WHERE t1.x < 100
 )

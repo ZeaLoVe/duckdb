@@ -2,7 +2,7 @@
 # description: Test Table Filter Push Down
 # group: [pushdown]
 
-require skip_reload
+
 
 
 statement ok
@@ -11,8 +11,7 @@ CREATE TABLE integers(i integer, j integer, k integer)
 statement ok
 INSERT INTO integers VALUES (5, 5, 5), (10, 10, 10)
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 # complex filter cannot be entirely pushed down
 query II
@@ -133,8 +132,7 @@ logical_opt	<!REGEX>:.*FILTER.*
 statement ok
 create temporary table t as select range a, range % 10 b, mod(range,10000) c, 5 d, 10000 e from range(100);
 
-statement ok
-PRAGMA explain_output = PHYSICAL_ONLY;
+
 
 query II
 explain select count(*) from t where b <=3 and b>=0;
@@ -149,8 +147,7 @@ CREATE TABLE test_time (a  TIME, b TIME, c TIME)
 statement ok
 INSERT INTO  test_time VALUES ('00:01:00','00:01:00','00:01:00'),('00:10:00','00:10:00','00:10:00'),('01:00:00','00:10:00','01:00:00'),(NULL,NULL,NULL)
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 query II
 EXPLAIN SELECT count(*) from test_time where a ='00:01:00'
@@ -165,8 +162,7 @@ CREATE TABLE test_bool (i bool, j bool)
 statement ok
 INSERT INTO  test_bool VALUES (TRUE,TRUE),(TRUE,FALSE),(FALSE,TRUE),(NULL,NULL)
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 query II
 EXPLAIN SELECT i FROM test_bool where j = TRUE

@@ -2,10 +2,9 @@
 # description: ENUM tests
 # group: [writer]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 # standard enum
 statement ok

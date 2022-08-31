@@ -2,7 +2,7 @@
 # description: Read ndjson files
 # group: [json]
 
-require json
+
 
 query I
 SELECT * FROM read_json_objects('data/json/example.ndjson')

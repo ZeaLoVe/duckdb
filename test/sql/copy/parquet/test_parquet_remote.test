@@ -2,9 +2,9 @@
 # description: Parquet read from S3/HTTPS
 # group: [parquet]
 
-require httpfs
 
-require parquet
+
+
 
 # non existent host
 statement error

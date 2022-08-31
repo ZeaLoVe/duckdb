@@ -1,9 +1,10 @@
+
+# done
 # name: test/issues/rigger/test_525.test
 # description: Issue 525
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE t0(c0 INT);

@@ -2,7 +2,7 @@
 # description: Test loading a timestamp column from an arrow-parquet generated file
 # group: [parquet]
 
-require parquet
+
 
 query T
 select * from parquet_scan('data/parquet-testing/pandas-date.parquet') order by 1

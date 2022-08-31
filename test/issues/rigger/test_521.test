@@ -1,9 +1,10 @@
+# done
+
 # name: test/issues/rigger/test_521.test
 # description: Issue 521
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 # ROUND() evaluates to -nan
 query R

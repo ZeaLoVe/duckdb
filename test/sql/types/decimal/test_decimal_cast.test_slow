@@ -2,8 +2,7 @@
 # description: Exhaustively test many decimal cast combinations
 # group: [decimal]
 
-statement ok
-PRAGMA enable_verification
+
 
 # test various decimal to decimal casts
 loop i 2 38
@@ -65,7 +64,7 @@ SELECT ('1'::DECIMAL(${i}, 0))::DECIMAL(18,1)
 ----
 1
 
-# target = hugeint
+# target = BIGINT
 # test casts with same scale
 query I
 SELECT ('1'::DECIMAL(${i}, 0))::DECIMAL(38,0)

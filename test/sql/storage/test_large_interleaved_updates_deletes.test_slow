@@ -6,7 +6,7 @@
 # but verifies that deletes/updates made to interleaved sections fail on commit
 # this test should be deleted once that behavior is fixed
 
-require skip_reload
+
 
 
 # load the DB from disk

@@ -1,12 +1,11 @@
+# TODO
+
 # name: test/issues/general/test_1987.test
 # description: Issue 1987: Casting decimal column to integer requires explicit 0 decimal specifier
 # group: [general]
 
 statement ok
-PRAGMA enable_verification
-
-statement ok
-create table test (consumption decimal(14,5));
+create table test (consumption float);
 
 statement ok
 insert into test values(17953.2)

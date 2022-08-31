@@ -2,7 +2,7 @@
 # description: Test TPC-DS data generation options
 # group: [tpcds]
 
-require tpcds
+
 
 statement ok
 CALL dsdgen(sf=0)

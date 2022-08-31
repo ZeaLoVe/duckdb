@@ -2,9 +2,9 @@
 # description: Parquet read and re-write various files
 # group: [writer]
 
-require parquet
 
-require vector_size 512
+
+
 
 # alltypes_dictionary: scan as parquet
 query I nosort alltypes_dictionary

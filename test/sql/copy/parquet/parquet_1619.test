@@ -2,7 +2,7 @@
 # description: Error: Not implemented Error: Expr of type 347 not implemented
 # group: [parquet]
 
-require parquet
+
 
 query I
 select struct_extract("inner", 'f64_field') from parquet_scan('data/parquet-testing/struct.parquet');

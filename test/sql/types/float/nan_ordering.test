@@ -2,8 +2,7 @@
 # description: Test ordering of NaN and infinity values
 # group: [float]
 
-statement ok
-PRAGMA enable_verification
+
 
 foreach type FLOAT DOUBLE
 

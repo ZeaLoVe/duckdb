@@ -2,7 +2,7 @@
 # description: Test order of unmarked prepared statements in select
 # group: [prepared]
 
-require skip_reload
+
 
 
 # select - from - where with subquery

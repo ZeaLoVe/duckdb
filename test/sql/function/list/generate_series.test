@@ -2,8 +2,7 @@
 # description: Test generate_series/range function
 # group: [list]
 
-statement ok
-PRAGMA enable_verification
+
 
 # range with a single parameter
 query I

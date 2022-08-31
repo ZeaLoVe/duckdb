@@ -3,7 +3,7 @@
 # group: [primarykey]
 
 statement ok
-CREATE TABLE integers(i INTEGER PRIMARY KEY, j INTEGER)
+CREATE TABLE integers(i INTEGER , j INTEGER)
 
 # insert two conflicting pairs at the same time
 statement error

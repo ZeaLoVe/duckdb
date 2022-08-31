@@ -2,8 +2,7 @@
 # description: Test IN statement
 # group: [generic]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE integers(i INTEGER)

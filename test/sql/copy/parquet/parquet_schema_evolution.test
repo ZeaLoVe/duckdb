@@ -2,10 +2,9 @@
 # description: Test parquet schema evolution
 # group: [parquet]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 # we run this twice, once with multi threading and once without
 loop i 0 2
@@ -134,7 +133,6 @@ SELECT id, a FROM '__TEST_DIR__/evolution_*.parquet' WHERE id>=39998 ORDER BY id
 39998	4
 39999	4
 
-statement ok
-PRAGMA threads=1
+
 
 endloop

@@ -2,10 +2,10 @@
 # description: Test the filename filter pushdown
 # group: [parquet]
 
-require parquet
+
 
 # requires notwindows for windows-style path backslash reasons
-require notwindows
+
 
 query III
 select i, j, filename from parquet_scan('data/parquet-testing/glob*/t?.parquet', FILENAME=1) order by i;
@@ -60,8 +60,7 @@ select id, value as filename, date from parquet_scan('data/parquet-testing/hive-
 
 # These tests confirm that the ParquetScanStats will properly handle the pruned files list
 
-statement ok
-pragma enable_object_cache
+
 
 query II
 select id, value from parquet_scan('data/parquet-testing/hive-partitioning/*/*/*/test.parquet', FILENAME=1) where filename like '%mismatching_count%' and id > 1;

@@ -2,10 +2,9 @@
 # description: Test boolean filters
 # group: [parquet]
 
-require parquet
 
-statement ok
-pragma enable_verification
+
+
 
 # pandas equivalent:
 # df = pandas.read_parquet('data/parquet-testing/bug1588.parquet')

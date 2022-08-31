@@ -1,9 +1,10 @@
+# auto cast not supported
+
 # name: test/issues/rigger/test_517.test
 # description: Issue 517
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 # Query with an AND predicate, NOT and comparison yields an incorrect result
 statement ok

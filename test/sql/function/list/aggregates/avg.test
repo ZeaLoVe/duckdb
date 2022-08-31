@@ -2,7 +2,7 @@
 # description: Test the list_avg aggregate function
 # group: [aggregates]
 
-require skip_reload
+
 
 
 # list_avg on a sequence
@@ -42,7 +42,7 @@ SELECT list_avg()
 
 # NULL average
 statement ok
-CREATE TABLE vals(i INTEGER[], j HUGEINT[]);
+CREATE TABLE vals(i INTEGER[], j BIGINT[]);
 
 statement ok
 INSERT INTO vals VALUES ([NULL, NULL], [NULL, NULL, NULL])
@@ -55,13 +55,13 @@ NULL	NULL
 # test list_avg on integers with no exact float64 representation
 
 statement ok
-CREATE TABLE bigints(n HUGEINT[]);
+CREATE TABLE bigints(n BIGINT[]);
 
 statement ok
-INSERT INTO bigints (n) VALUES (['9007199254740992'::HUGEINT, 1::HUGEINT, 0::HUGEINT]);
+INSERT INTO bigints (n) VALUES (['9007199254740992'::BIGINT, 1::BIGINT, 0::BIGINT]);
 
 # this would give the wrong result with 'double' precision
-require longdouble
+
 
 query R
 SELECT list_avg(n)::DOUBLE - '3002399751580331'::DOUBLE FROM bigints;

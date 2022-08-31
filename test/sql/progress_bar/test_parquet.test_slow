@@ -2,11 +2,11 @@
 # description: Test basic parquet reading
 # group: [progress_bar]
 
-require parquet
 
-require vector_size 512
 
-require tpch
+
+
+
 
 statement ok
 CALL dbgen(sf=0.1)
@@ -17,11 +17,9 @@ copy lineitem TO '__TEST_DIR__/progress_bar_lineitem.parquet' (FORMAT 'parquet')
 statement ok
 copy lineitem TO '__TEST_DIR__/progress_bar_lineitem2.parquet' (FORMAT 'parquet');
 
-statement ok
-PRAGMA progress_bar_time=1
 
-statement ok
-PRAGMA disable_print_progress_bar
+
+
 
 statement ok
 SELECT
@@ -70,11 +68,9 @@ ORDER BY
     l_returnflag,
     l_linestatus;
 
-statement ok
-PRAGMA threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
 
 statement ok
 SELECT

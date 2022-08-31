@@ -2,9 +2,9 @@
 # description: Test the automatic parsing of the hive partitioning scheme
 # group: [s3]
 
-require parquet
 
-require httpfs
+
+
 
 require-env S3_TEST_SERVER_AVAILABLE 1
 

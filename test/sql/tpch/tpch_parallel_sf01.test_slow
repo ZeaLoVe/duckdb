@@ -2,13 +2,11 @@
 # description: Test parallel TPC-H SF0.1
 # group: [tpch]
 
-require tpch
 
-statement ok
-PRAGMA threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
+
 
 statement ok
 CALL dbgen(sf=0.1);

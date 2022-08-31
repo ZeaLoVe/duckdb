@@ -2,8 +2,7 @@
 # description: Issue 599
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 # UPDATE results in crash or ASan error
 statement ok

@@ -139,7 +139,7 @@ bool SQLLogicTestRunner::ForEachTokenReplace(const string &parameter, vector<str
 		result.push_back("smallint");
 		result.push_back("integer");
 		result.push_back("bigint");
-		result.push_back("hugeint");
+		result.push_back("BIGINT");
 		collection = true;
 	}
 	if (is_unsigned) {
@@ -433,9 +433,9 @@ void SQLLogicTestRunner::ExecuteFile(string script) {
 			EndLoop();
 		} else if (token.type == SQLLogicTokenType::SQLLOGIC_REQUIRE) {
 			if (token.parameters.size() < 1) {
-				parser.Fail("require requires a single parameter");
+				parser.Fail("
 			}
-			// require command
+			// 
 			string param = StringUtil::Lower(token.parameters[0]);
 			// os specific stuff
 			if (param == "notmingw") {
@@ -468,9 +468,9 @@ void SQLLogicTestRunner::ExecuteFile(string script) {
 				}
 			} else if (param == "vector_size") {
 				if (token.parameters.size() != 2) {
-					parser.Fail("require vector_size requires a parameter");
+					parser.Fail("
 				}
-				// require a specific vector size
+				// 
 				auto required_vector_size = std::stoi(token.parameters[1]);
 				if (STANDARD_VECTOR_SIZE < required_vector_size) {
 					// vector size is too low for this test: skip it

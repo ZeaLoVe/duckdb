@@ -2,10 +2,9 @@
 # description: Join benchmark (0.5GB - small dataset) from h2oai db-benchmark (https://github.com/h2oai/db-benchmark)
 # group: [db-benchmark]
 
-require httpfs
 
-statement ok
-pragma threads=16
+
+
 
 statement ok
 CREATE TABLE x AS SELECT * FROM read_csv_auto('https://github.com/cwida/duckdb-data/releases/download/v1.0/J1_1e7_NA_0_0.csv.gz');

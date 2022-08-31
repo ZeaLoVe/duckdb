@@ -2,16 +2,14 @@
 # description: Remove column from persistent table
 # group: [wal]
 
-require skip_reload
+
 
 
 load __TEST_DIR__/test_store_alter_type.db
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 # create a table and add a column to it
 statement ok
@@ -22,11 +20,9 @@ INSERT INTO test VALUES (11, 22), (13, 22), (12, 21)
 
 restart
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 statement ok
 ALTER TABLE test ALTER b TYPE VARCHAR
@@ -40,11 +36,9 @@ SELECT * FROM test ORDER BY 1
 
 restart
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 query IT
 SELECT * FROM test ORDER BY 1
@@ -66,11 +60,9 @@ SELECT * FROM test ORDER BY 1
 
 restart
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 query IT
 SELECT * FROM test ORDER BY 1

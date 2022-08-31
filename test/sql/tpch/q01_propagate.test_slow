@@ -2,7 +2,7 @@
 # description: Test statistics propagation in Q01
 # group: [tpch]
 
-require tpch
+
 
 statement ok
 CALL dbgen(sf=0.01);

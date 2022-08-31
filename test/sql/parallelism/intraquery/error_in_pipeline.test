@@ -2,11 +2,9 @@
 # description: Test errors happening in pipelines
 # group: [intraquery]
 
-statement ok
-PRAGMA enable_verification
 
-statement ok
-PRAGMA threads=16
+
+
 
 statement ok
 create table varchars as select i::varchar i from range(1000000) tbl(i);

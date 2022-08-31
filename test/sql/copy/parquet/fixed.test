@@ -2,7 +2,7 @@
 # description: Strings in fixed length binary arrays
 # group: [parquet]
 
-require parquet
+
 
 query I
 SELECT data FROM parquet_scan('data/parquet-testing/fixed.parquet')

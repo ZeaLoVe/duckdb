@@ -2,8 +2,7 @@
 # description: Test common aggregate
 # group: [expression]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE integers(i INTEGER);
@@ -11,8 +10,7 @@ CREATE TABLE integers(i INTEGER);
 statement ok
 INSERT INTO integers VALUES (1), (2), (3)
 
-statement ok
-PRAGMA explain_output = 'OPTIMIZED_ONLY';
+
 
 # all of these are identical, i.e. this gets folded into a single count aggregate
 query II

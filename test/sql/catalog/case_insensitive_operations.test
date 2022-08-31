@@ -2,11 +2,10 @@
 # description: Test case insensitive operations
 # group: [catalog]
 
-require skip_reload
 
 
-statement ok
-PRAGMA enable_verification
+
+
 
 loop i 0 2
 
@@ -143,7 +142,6 @@ SELECT structs.S.i.K FROM structs GROUP BY structs.S.i.K
 statement ok
 DROP TABLE structs;
 
-statement ok
-PRAGMA preserve_identifier_case=false;
+
 
 endloop

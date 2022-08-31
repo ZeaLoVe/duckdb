@@ -2,8 +2,7 @@
 # description: Get list of collations
 # group: [collate]
 
-statement ok
-PRAGMA collations
+
 
 statement error
 PRAGMA collations=3

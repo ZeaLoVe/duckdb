@@ -2,8 +2,7 @@
 # description: Test boolean casts
 # group: [cast]
 
-statement ok
-PRAGMA enable_verification
+
 
 query T
 SELECT CAST(1=1 AS VARCHAR)
@@ -159,12 +158,12 @@ SELECT CAST(CAST('0' AS double) AS BOOLEAN)
 0
 
 query T
-SELECT CAST(CAST('1' AS HUGEINT) AS BOOLEAN)
+SELECT CAST(CAST('1' AS BIGINT) AS BOOLEAN)
 ----
 1
 
 query T
-SELECT CAST(CAST('0' AS HUGEINT) AS BOOLEAN)
+SELECT CAST(CAST('0' AS BIGINT) AS BOOLEAN)
 ----
 0
 

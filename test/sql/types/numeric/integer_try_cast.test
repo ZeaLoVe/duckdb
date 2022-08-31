@@ -2,8 +2,7 @@
 # description: Integer try cast
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 # integer casts
 statement ok
@@ -97,7 +96,7 @@ SELECT i::BIGINT::INTEGER FROM integers ORDER BY i
 2147483647
 
 query I
-SELECT i::HUGEINT::INTEGER FROM integers ORDER BY i
+SELECT i::BIGINT::INTEGER FROM integers ORDER BY i
 ----
 -2147483648
 0

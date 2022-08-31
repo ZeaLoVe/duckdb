@@ -2,9 +2,9 @@
 # description: Missing Column Data After Adding Left Join To Query in DuckDB Version 0.2.8
 # group: [parquet]
 
-require parquet
 
-require httpfs
+
+
 
 statement ok
 CREATE TABLE view_one AS SELECT * FROM 'https://github.com/cwida/duckdb-data/releases/download/v1.0/issue2102_one.parquet';

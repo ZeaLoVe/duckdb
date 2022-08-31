@@ -2,7 +2,7 @@
 # description: Test stats reading in parquet reader
 # group: [parquet]
 
-require parquet
+
 
 # boolean values
 query IIII

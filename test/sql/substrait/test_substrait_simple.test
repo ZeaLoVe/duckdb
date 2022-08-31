@@ -2,10 +2,9 @@
 # description: Test get_substrait with simple operators
 # group: [substrait]
 
-require substrait
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CREATE TABLE person (name text,money int);

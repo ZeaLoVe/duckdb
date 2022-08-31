@@ -2,10 +2,9 @@
 # description: Issue #2965
 # group: [cast]
 
-statement ok
-PRAGMA enable_verification
 
-foreach datatype TINYINT SMALLINT INTEGER BIGINT HUGEINT
+
+foreach datatype TINYINT SMALLINT INTEGER BIGINT BIGINT
 
 query I
 SELECT CAST(0.55 AS ${datatype}) as x;

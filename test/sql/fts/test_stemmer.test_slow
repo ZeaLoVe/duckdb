@@ -2,10 +2,9 @@
 # description: Full text search stemmer
 # group: [fts]
 
-require fts
 
-statement ok
-PRAGMA enable_verification
+
+
 
 query T
 select stem('iiiiiiinformation', 'porter')

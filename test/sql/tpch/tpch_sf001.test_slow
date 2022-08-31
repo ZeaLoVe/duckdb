@@ -2,10 +2,9 @@
 # description: Test TPC-H SF0.01
 # group: [tpch]
 
-require tpch
 
-statement ok
-PRAGMA verify_serializer
+
+
 
 statement ok
 CALL dbgen(sf=0.01);

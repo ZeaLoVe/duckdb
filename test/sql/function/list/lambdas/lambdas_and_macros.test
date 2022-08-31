@@ -2,8 +2,7 @@
 # description: Test mixing lambdas and macros
 # group: [lambdas]
 
-statement ok
-PRAGMA enable_verification
+
 
 # conflicting column names
 statement ok

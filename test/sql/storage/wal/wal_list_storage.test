@@ -4,22 +4,18 @@
 
 load __TEST_DIR__/list_storage_test.db
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 statement ok
 CREATE TABLE a(b INTEGER[]);
 
 restart
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 query I
 SELECT * FROM a
@@ -38,11 +34,9 @@ NULL
 
 restart
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 query I
 SELECT * FROM a
@@ -69,11 +63,9 @@ NULL
 
 restart
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 query I
 SELECT * FROM b
@@ -99,11 +91,9 @@ NULL
 
 restart
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 query I
 SELECT * FROM c

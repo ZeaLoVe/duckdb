@@ -69,7 +69,7 @@ NULL
 
 # set default on a table with constraints
 statement ok
-CREATE TABLE constrainty(i INTEGER PRIMARY KEY, j INTEGER);
+CREATE TABLE constrainty(i INTEGER, j INTEGER);
 
 statement ok
 ALTER TABLE constrainty ALTER j SET DEFAULT 3

@@ -2,9 +2,9 @@
 # description: This test triggers the http prefetch mechanism.
 # group: [parquet]
 
-require parquet
 
-require httpfs
+
+
 
 require-env S3_TEST_SERVER_AVAILABLE 1
 

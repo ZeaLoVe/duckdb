@@ -2,8 +2,7 @@
 # description: Test view creation
 # group: [view]
 
-statement ok
-PRAGMA enable_verification
+
 
 # create a table
 statement ok

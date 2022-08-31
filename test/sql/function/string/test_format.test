@@ -2,8 +2,7 @@
 # description: Test format
 # group: [string]
 
-statement ok
-PRAGMA enable_verification
+
 
 # format without format specifiers
 query TT
@@ -48,9 +47,9 @@ SELECT format('{}', BLOB '\x00hello')
 ----
 \x00hello
 
-# hugeint
+# BIGINT
 query T
-SELECT format('{}', 120381902481294715712::HUGEINT)
+SELECT format('{}', 120381902481294715712::BIGINT)
 ----
 120381902481294715712
 

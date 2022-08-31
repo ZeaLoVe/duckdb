@@ -2,14 +2,11 @@
 # description: Test cross product with parallelism
 # group: [cross_product]
 
-statement ok
-PRAGMA enable_verification
 
-statement ok
-PRAGMA threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
+
 
 statement ok
 CREATE TABLE integers AS SELECT * FROM range(0, 5000) tbl(i)

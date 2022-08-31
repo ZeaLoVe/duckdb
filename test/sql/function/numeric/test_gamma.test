@@ -2,8 +2,7 @@
 # description: Test gamma function
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 query I
 SELECT gamma(NULL)
@@ -45,7 +44,7 @@ SELECT gamma(2::tinyint)
 1
 
 query I
-SELECT gamma(2::hugeint)
+SELECT gamma(2::BIGINT)
 ----
 1
 
@@ -97,7 +96,7 @@ SELECT lgamma(2::tinyint)
 0
 
 query I
-SELECT lgamma(2::hugeint)
+SELECT lgamma(2::BIGINT)
 ----
 0
 

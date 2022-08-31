@@ -1,9 +1,10 @@
+
+# unspported
 # name: test/issues/rigger/test_518.test
 # description: Issue 518
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 # Query using the LN() function does not terminate
 statement ok

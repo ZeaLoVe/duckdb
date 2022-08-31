@@ -2,8 +2,7 @@
 # description: Test jaro and jaro_winkler function
 # group: [string]
 
-statement ok
-PRAGMA enable_verification
+
 
 query T
 select jaro_winkler_similarity('CRATE', 'TRACE')
@@ -178,7 +177,7 @@ create table test as select '0000' || range::varchar s from range(10000);
 # results should be the same regardless of the constant being first or second arg!
 # because of floating point arithmetic this is off slightly at smaller vector sizes
 
-require vector_size 1024
+
 
 query T nosort q0
 select avg(jaro_winkler_similarity('00000000', s)) from test;

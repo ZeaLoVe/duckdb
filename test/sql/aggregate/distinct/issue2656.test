@@ -2,8 +2,7 @@
 # description: Issue #2656: DISTINCT + ORDER produces incorrect result
 # group: [distinct]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE T (t1 int, t2 int);
@@ -14,12 +13,12 @@ INSERT INTO t VALUES (1, 1), (1, 2);
 query I
 SELECT DISTINCT t1
 FROM T
-ORDER BY t1, t2;
+ORDER BY t1;
 ----
 1
 
 query II
-SELECT DISTINCT ON (1) t1, t2
+SELECT DISTINCT t1, t2
 FROM T
 ORDER BY t1, t2;
 ----

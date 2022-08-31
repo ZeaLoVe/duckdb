@@ -2,7 +2,7 @@
 # description: Test the automatic parsing of the hive partitioning scheme
 # group: [parquet]
 
-require parquet
+
 
 # test parsing hive partitioning scheme
 query IIII

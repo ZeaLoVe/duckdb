@@ -2,10 +2,9 @@
 # description: Test Parquet With Pushing Down of OR Filters
 # group: [pushdown]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 # FIXME: re-enable when or pushdown is fixed
 mode skip
@@ -53,8 +52,7 @@ physical_plan	<REGEX>:.*PARQUET_SCAN.*Filters: a<2 OR a>3 AND a=1.*OR a=4.*
 
 
 # Testing the number of rows filtered (column "a" has eight values: 0 .. 7)
-statement ok
-PRAGMA enable_profiling
+
 
 # should return 2 rows: 0 and 7
 query II

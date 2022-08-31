@@ -2,16 +2,14 @@
 # description: Compare window function sorting with ORDER BY sorting on TPC-H's lineitem
 # group: [window]
 
-require tpch
 
-statement ok
-PRAGMA threads=4
+
+
 
 statement ok
 CALL dbgen(sf=1);
 
-statement ok
-pragma verify_parallelism
+
 
 # derive table from lineitem that has a deterministic sorting order on l_extendedprice
 statement ok
@@ -21,8 +19,7 @@ CREATE TABLE lineitem_d AS (
 );
 
 # first iteration runs externally, second runs normally
-statement ok
-PRAGMA debug_force_external=true
+
 
 loop i 0 2
 
@@ -83,7 +80,6 @@ with rownum_window as (select l_extendedprice, list_value(l_shipinstruct), list_
 select * from rownum_window order by l_extendedprice
 ----
 
-statement ok
-PRAGMA debug_force_external=false
+
 
 endloop

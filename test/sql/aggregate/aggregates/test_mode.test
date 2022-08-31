@@ -72,7 +72,7 @@ select mode(name) from names;
 ----
 pedro
 
-require vector_size 512
+
 
 query III
 select k, v, mode(v) over (partition by k)
@@ -251,18 +251,18 @@ select k, v, mode(v) over (partition by k)
 # Huge integers
 
 statement ok
-create table hugeints (k int, v hugeint)
+create table BIGINTs (k int, v BIGINT)
 
 statement ok
-insert into hugeints values (1, 5), (1, 5), (2, 5), (2, 2), (2, 2), (3, 1), (1, null);
+insert into BIGINTs values (1, 5), (1, 5), (2, 5), (2, 2), (2, 2), (3, 1), (1, null);
 
 query I
-select mode(v) from hugeints;
+select mode(v) from BIGINTs;
 ----
 5
 
 query II
-select k, mode(v) from hugeints group by k;
+select k, mode(v) from BIGINTs group by k;
 ----
 1	5
 2	2
@@ -270,7 +270,7 @@ select k, mode(v) from hugeints group by k;
 
 query III
 select k, v, mode(v) over (partition by k)
-    from hugeints
+    from BIGINTs
     order by k, v;
 ----
 1	NULL	5

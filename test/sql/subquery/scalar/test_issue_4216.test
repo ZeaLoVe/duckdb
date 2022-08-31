@@ -2,8 +2,7 @@
 # description: Issue 4216: DELIM_JOIN doesn't propagate statistics correctly.
 # group: [scalar]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE test (x INT, y INT)

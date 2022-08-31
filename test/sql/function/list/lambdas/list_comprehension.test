@@ -2,8 +2,7 @@
 # description: Test different examples that can be found when searching for python list comprehension examples
 # group: [lambdas]
 
-statement ok
-PRAGMA enable_verification
+
 
 # even squares
 query I

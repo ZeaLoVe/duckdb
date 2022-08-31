@@ -2,11 +2,11 @@
 # description: Various working and non-working configs for the uploader
 # group: [s3]
 
-require tpch
 
-require parquet
 
-require httpfs
+
+
+
 
 require-env S3_TEST_SERVER_AVAILABLE 1
 

@@ -2,8 +2,7 @@
 # description: Test Filters Pull Up
 # group: [optimizer]
 
-statement ok
-PRAGMA explain_output = 'PHYSICAL_ONLY'
+
 
 statement ok
 CREATE TABLE vals1 AS SELECT i AS i, i AS j FROM range(0, 11, 1) t1(i)

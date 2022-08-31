@@ -2,10 +2,9 @@
 # description: Test top-n queries on TPC-H
 # group: [tpch]
 
-require tpch
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CALL dbgen(sf=1);

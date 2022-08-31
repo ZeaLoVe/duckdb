@@ -2,11 +2,10 @@
 # description: Test Top N on TPC-DS SF1
 # group: [topn]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
-CREATE TABLE final(channel VARCHAR, i_brand_id INTEGER, i_class_id INTEGER, i_category_id INTEGER, sum_sales DECIMAL(38,2), number_sales HUGEINT);
+CREATE TABLE final(channel VARCHAR, i_brand_id INTEGER, i_class_id INTEGER, i_category_id INTEGER, sum_sales DECIMAL(38,2), number_sales BIGINT);
 
 statement ok
 COPY final FROM 'data/csv/tpcds_14.csv' (FORMAT CSV, DELIMITER '|', HEADER);

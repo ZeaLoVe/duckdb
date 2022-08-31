@@ -6,8 +6,7 @@
 load __TEST_DIR__/test_bitpacking.db
 
 # First test: detailed compression ratio
-statement ok
-PRAGMA force_compression='bitpacking'
+
 
 # Uncompressed value size: (1024 * 64bit) = 65536
 # Compress value size: 64(bits) + 64(frame-of-reference) + (1024 * 1) = 1152
@@ -18,8 +17,7 @@ CREATE TABLE test_bitpacked AS SELECT (2000 + i%2)::INT64 AS i FROM range(0, 100
 statement ok
 checkpoint
 
-statement ok
-PRAGMA force_compression='uncompressed'
+
 
 statement ok
 CREATE TABLE test_uncompressed AS SELECT (2000 + i%2)::INT64 AS i FROM range(0, 10000000) tbl(i);
@@ -52,8 +50,7 @@ drop table test_uncompressed
 # Assert that all supported types do in fact compress
 foreach type int8 int16 int32 int64 uint8 uint16 uint32 uint64 decimal(4,1) decimal(8,1) decimal(12,1) decimal(18,1) bool
 
-statement ok
-PRAGMA force_compression='uncompressed';
+
 
 statement ok
 CREATE TABLE test_uncompressed AS SELECT (i%2)::${type} FROM range(0, 2500000) tbl(i);
@@ -61,8 +58,7 @@ CREATE TABLE test_uncompressed AS SELECT (i%2)::${type} FROM range(0, 2500000) t
 statement ok
 checkpoint
 
-statement ok
-PRAGMA force_compression='bitpacking'
+
 
 statement ok
 CREATE TABLE test_bitpacked AS SELECT (i%2)::${type} FROM range(0, 2500000) tbl(i);

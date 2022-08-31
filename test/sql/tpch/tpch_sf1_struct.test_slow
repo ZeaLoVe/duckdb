@@ -2,7 +2,7 @@
 # description: Test TPC-H SF1
 # group: [tpch]
 
-require tpch
+
 
 load __TEST_DIR__/tpch_sf1_struct.db
 

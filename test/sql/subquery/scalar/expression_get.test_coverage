@@ -2,8 +2,7 @@
 # description: Issue #2701: Nested selecting max from column values gives dependent join internal error
 # group: [scalar]
 
-statement ok
-PRAGMA enable_verification
+
 
 # basic correlated VALUES clause in subquery
 statement ok

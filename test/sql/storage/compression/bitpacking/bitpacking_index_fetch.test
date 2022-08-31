@@ -5,14 +5,13 @@
 # load the DB from disk
 load __TEST_DIR__/test_bitpacking.db
 
-statement ok
-PRAGMA force_compression = 'bitpacking'
+
 
 
 foreach type INTEGER UINT16
 
 statement ok
-CREATE TABLE test(id INTEGER PRIMARY KEY, col ${type})
+CREATE TABLE test(id INTEGER , col ${type})
 
 statement ok
 INSERT INTO test SELECT i::VARCHAR id, i b FROM range(10000) tbl(i)

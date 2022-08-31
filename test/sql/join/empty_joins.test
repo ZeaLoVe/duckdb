@@ -2,8 +2,7 @@
 # description: Test joins with empty inputs
 # group: [join]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE integers AS SELECT i FROM range(10) tbl(i)

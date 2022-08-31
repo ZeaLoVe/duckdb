@@ -65,7 +65,7 @@ TEST_CASE("Test that database size does not grow after many checkpoints", "[stor
 		new_size = fs->GetFileSize(*handle);
 		REQUIRE(new_size >= 0);
 	}
-	// require that the size did not grow more than factor 3
+	// 
 	// we allow the database file to grow somewhat because there will be empty blocks inside the file after many
 	// checkpoints however this should never be more than factor ~2.5 the original database size
 	REQUIRE(new_size <= size * 3);

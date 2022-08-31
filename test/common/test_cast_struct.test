@@ -1,9 +1,10 @@
+# Need change
+
 # name: test/common/test_cast_struct.test
 # description: Test casting structs
 # group: [common]
 
-statement ok
-PRAGMA enable_verification
+
 
 # struct to struct casts with different names
 query I

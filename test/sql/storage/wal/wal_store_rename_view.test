@@ -5,11 +5,9 @@
 # load the DB from disk
 load __TEST_DIR__/test_rename_view.db
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 statement ok
 CREATE TABLE test (a INTEGER, b INTEGER);
@@ -46,11 +44,9 @@ ROLLBACK
 # restart the database
 restart
 
-statement ok
-PRAGMA disable_checkpoint_on_shutdown
 
-statement ok
-PRAGMA wal_autocheckpoint='1TB';
+
+
 
 statement ok
 BEGIN TRANSACTION

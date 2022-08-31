@@ -596,7 +596,7 @@ bool TestResultHelper::CompareValues(string lvalue_str, string rvalue_str, idx_t
 			return true;
 		}
 	}
-	// some times require more checking (specifically floating point numbers because of inaccuracies)
+	// some times 
 	// if not equivalent we need to cast to the SQL type to verify
 	auto sql_type = result.types[current_column];
 	if (sql_type.IsNumeric()) {

@@ -2,14 +2,13 @@
 # description: Test TPC-DS SF1 queries on persistent storage
 # group: [tpcds]
 
-require tpcds
+
 
 load __TEST_DIR__/tpcds_storage.db
 
 foreach compression <compression>
 
-statement ok
-PRAGMA force_compression='${compression}'
+
 
 statement ok
 call dsdgen(sf=1);
@@ -19,8 +18,7 @@ CHECKPOINT
 
 restart
 
-statement ok
-PRAGMA default_null_order='NULLS LAST'
+
 
 # too slow queries:
 # 64, 85
@@ -75,8 +73,7 @@ endloop
 
 foreach i 71
 
-statement ok
-pragma threads=1
+
 
 query I
 PRAGMA tpcds(${i})

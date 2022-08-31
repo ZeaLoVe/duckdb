@@ -2,8 +2,7 @@
 # description: Test queries involving Common SubExpressions
 # group: [expression]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 create table test(a integer);

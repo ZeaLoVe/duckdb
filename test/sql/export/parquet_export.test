@@ -2,12 +2,11 @@
 # description: Test EXPORT/IMPORT database with parquet
 # group: [export]
 
-require parquet
 
-require vector_size 64
 
-statement ok
-PRAGMA enable_verification
+
+
+
 
 statement ok
 BEGIN TRANSACTION

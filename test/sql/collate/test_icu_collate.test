@@ -2,7 +2,7 @@
 # description: Test basic ICU extension usage
 # group: [collate]
 
-require icu
+
 
 statement ok
 CREATE TABLE strings(s VARCHAR);

@@ -2,7 +2,7 @@
 # description: PREPARE and WAL
 # group: [catalog]
 
-require skip_reload
+
 
 
 # load the DB from disk

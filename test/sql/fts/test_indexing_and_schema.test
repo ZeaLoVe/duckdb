@@ -2,7 +2,7 @@
 # description: Refer default schema when the table name doesn't have a qualifier.
 # group: [fts]
 
-require fts
+
 
 statement ok
 CREATE SCHEMA test
@@ -19,8 +19,7 @@ PRAGMA create_fts_index('documents', 'id', 'body')
 statement ok
 SET SCHEMA='test'
 
-statement ok
-PRAGMA create_fts_index('documents', 'id', 'body')
+
 
 statement ok
 SET SCHEMA='main'
@@ -31,5 +30,3 @@ PRAGMA drop_fts_index('documents')
 statement ok
 SET SCHEMA='test'
 
-statement ok
-PRAGMA drop_fts_index('documents')

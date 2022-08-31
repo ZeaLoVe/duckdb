@@ -2,10 +2,9 @@
 # description: Test Parquet files created by some internal AWS process
 # group: [parquet]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 query III
 SELECT * FROM parquet_scan('data/parquet-testing/aws1.snappy.parquet') limit 100

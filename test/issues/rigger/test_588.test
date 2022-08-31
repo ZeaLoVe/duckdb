@@ -2,8 +2,7 @@
 # description: Issue 588
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 # Query with complex ORDER BY causes an incorrect rowid value
 statement ok

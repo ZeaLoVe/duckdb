@@ -2,8 +2,7 @@
 # description: Test QUANTILE_CONT aggregate
 # group: [aggregates]
 
-statement ok
-PRAGMA enable_verification
+
 
 # Get around 1% approximately equal for R
 statement ok
@@ -147,11 +146,9 @@ statement error
 SELECT quantile_cont(r, 0.1, 50) FROM quantile
 
 
-statement ok
-pragma threads=4
 
-statement ok
-PRAGMA verify_parallelism
+
+
 
 # single GROUP
 query RRR

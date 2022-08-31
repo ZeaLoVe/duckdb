@@ -2,10 +2,9 @@
 # description: Test window functions in correlated subqueries
 # group: [scalar]
 
-require vector_size 512
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CREATE TABLE integers(i INTEGER)

@@ -2,7 +2,7 @@
 # description: Test the filename option of the parquet reader
 # group: [parquet]
 
-require parquet
+
 
 # Simple glob with filenames, note that we replace \ for / to make tests pass on windows
 query III

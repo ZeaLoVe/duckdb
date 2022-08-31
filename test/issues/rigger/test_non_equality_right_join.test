@@ -1,15 +1,11 @@
+# done
 # name: test/issues/rigger/test_non_equality_right_join.test
 # description: SQLancer bug that detected a problem with a non-equality predicate which would not get correctly flipped when transforming between left <-> right join
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
 
 statement ok
-BEGIN TRANSACTION;
-
-statement ok
-CREATE TABLE t0(c0 DATE, c1 VARCHAR DEFAULT(CAST('1970-01-16 12:55:22' AS TIMESTAMP)), actual_rowid BIGINT);
+CREATE TABLE t0(c0 DATE NULL, c1 VARCHAR DEFAULT(CAST('1970-01-16 12:55:22' AS TIMESTAMP)), actual_rowid BIGINT);
 
 statement ok
 INSERT INTO t0 VALUES('1969-12-16','810092761', 0);
@@ -42,16 +38,13 @@ statement ok
 INSERT INTO t0 VALUES(NULL,'', 9);
 
 statement ok
-CREATE TABLE t6(c0 DOUBLE, c1 SMALLINT DEFAULT(CAST('1969-12-27' AS DATE)), PRIMARY KEY(c1));;
+CREATE TABLE t6(c0 DOUBLE NULL, c1 SMALLINT DEFAULT(CAST('1969-12-27' AS DATE)));
 
 statement ok
 INSERT INTO t6 VALUES(NULL,0);
 
-statement ok
-COMMIT;
-
 query III
-SELECT t0.actual_rowid, t6.c0, t0.c0 FROM t0 RIGHT JOIN t6 ON ((t0.actual_rowid)>=(((((t6.c0)<=(t6.c0))) IS NOT NULL)::INTEGER)) GROUP BY t0.actual_rowid, t6.c0, t0.c0 order by 1, 2, 3;
+SELECT t0.actual_rowid, t6.c0, t0.c0 FROM t0 RIGHT JOIN t6 ON ((t0.actual_rowid)>=(((((t6.c0)<=(t6.c0))) IS NOT NULL)::INTEGER)) GROUP BY t0.actual_rowid, t6.c0, t0.c0 order by actual_rowid;
 ----
 0	NULL	1969-12-16
 1	NULL	1970-01-15

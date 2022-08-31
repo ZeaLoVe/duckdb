@@ -2,8 +2,7 @@
 # description: Test show select
 # group: [show_select]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE integers(i INTEGER, j INTEGER)
@@ -49,5 +48,5 @@ d	DATE	YES	NULL	NULL	NULL
 query TTTTTT
 SHOW SELECT SUM(i) AS sum1, j FROM integers GROUP BY j HAVING j < 10
 ----
-sum1	HUGEINT	YES	NULL	NULL	NULL
+sum1	BIGINT	YES	NULL	NULL	NULL
 j	INTEGER	YES	NULL	NULL	NULL

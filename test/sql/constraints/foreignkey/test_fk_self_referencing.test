@@ -3,10 +3,10 @@
 # group: [foreignkey]
 
 statement error
-CREATE TABLE employee(id INTEGER PRIMARY KEY, managerid INTEGER, name VARCHAR, FOREIGN KEY(managerid) REFERENCES employee(emp_id));
+CREATE TABLE employee(id INTEGER , managerid INTEGER, name VARCHAR, FOREIGN KEY(managerid) REFERENCES employee(emp_id));
 
 statement ok
-CREATE TABLE employee(id INTEGER PRIMARY KEY, managerid INTEGER, name VARCHAR, FOREIGN KEY(managerid) REFERENCES employee(id));
+CREATE TABLE employee(id INTEGER , managerid INTEGER, name VARCHAR, FOREIGN KEY(managerid) REFERENCES employee(id));
 
 statement ok
 INSERT INTO employee VALUES (1, NULL, 'Smith'), (2, NULL, 'Jhon'), (3, NULL, 'Romeo');

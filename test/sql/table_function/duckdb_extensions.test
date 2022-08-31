@@ -5,7 +5,7 @@
 statement ok
 SELECT * FROM duckdb_extensions();
 
-require tpch
+
 
 query I
 SELECT extension_name FROM duckdb_extensions() WHERE loaded AND extension_name='tpch';

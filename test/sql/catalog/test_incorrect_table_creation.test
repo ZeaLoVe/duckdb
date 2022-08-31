@@ -15,5 +15,5 @@ statement error
 CREATE TABLE integers(i INTEGER, PRIMARY KEY(i), PRIMARY KEY(i)
 
 statement error
-CREATE TABLE integers(i INTEGER PRIMARY KEY, PRIMARY KEY(i)
+CREATE TABLE integers(i INTEGER , PRIMARY KEY(i)
 

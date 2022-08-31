@@ -2,8 +2,7 @@
 # description: Testing resulting types of different types combined with USMALLINT
 # group: [combinations]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE tinyint_limits AS SELECT (-128)::TINYINT min, 127::TINYINT max
@@ -30,7 +29,7 @@ statement ok
 CREATE TABLE ubigint_limits AS SELECT (0)::UBIGINT min, 18446744073709551615::UBIGINT max
 
 statement ok
-CREATE TABLE hugeint_limits AS SELECT (-17014118346046923173168730371588410572)::HUGEINT min, 17014118346046923173168730371588410572::HUGEINT max
+CREATE TABLE BIGINT_limits AS SELECT (-17014118346046923173168730371588410572)::BIGINT min, 17014118346046923173168730371588410572::BIGINT max
 
 foreach type TINYINT SMALLINT INTEGER BIGINT UTINYINT USMALLINT UINTEGER UBIGINT
 
@@ -44,11 +43,11 @@ select (typeof([(SELECT min from ${type}_limits), 1.00005])::VARCHAR)[:7]
 ----
 DECIMAL
 
-# HUGEINT sets width to 38+scale, so it will never fit into DECIMAL
+# BIGINT sets width to 38+scale, so it will never fit into DECIMAL
 statement error
-select (typeof([(SELECT min from hugeint_limits), 1.00005])::VARCHAR)[:7]
+select (typeof([(SELECT min from BIGINT_limits), 1.00005])::VARCHAR)[:7]
 
 statement error
-select (typeof([(SELECT max from hugeint_limits), 1.00005])::VARCHAR)[:7]
+select (typeof([(SELECT max from BIGINT_limits), 1.00005])::VARCHAR)[:7]
 
 endloop

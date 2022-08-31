@@ -2,10 +2,9 @@
 # description: Test IGNORE NULLS window syntax
 # group: [window]
 
-require vector_size 512
 
-statement ok
-PRAGMA enable_verification
+
+
 
 # Issue #2549
 statement ok

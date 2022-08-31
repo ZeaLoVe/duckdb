@@ -2,8 +2,7 @@
 # description: Test version pragma
 # group: [pragma]
 
-statement ok
-PRAGMA version;
+
 
 statement ok
 select * from pragma_version();

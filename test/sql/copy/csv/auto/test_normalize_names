@@ -2,7 +2,7 @@
 # description: Test csv header normalization
 # group: [auto]
 
-require vector_size 512
+
 
 # CSV file with uppercase header
 statement ok

@@ -56,8 +56,7 @@ statement error
 SET enable_profiling='unknown';
 
 # enable_progress_bar
-statement ok
-PRAGMA disable_print_progress_bar
+
 
 statement ok
 SET enable_progress_bar=true;

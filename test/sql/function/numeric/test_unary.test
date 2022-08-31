@@ -2,8 +2,7 @@
 # description: Test unary operators
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE test(i INTEGER)

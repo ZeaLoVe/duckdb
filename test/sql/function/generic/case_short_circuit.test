@@ -2,8 +2,7 @@
 # description: Test correct CASE statement short circuiting
 # group: [generic]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 create table t (n text);

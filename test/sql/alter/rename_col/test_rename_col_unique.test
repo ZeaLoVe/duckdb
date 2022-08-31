@@ -3,7 +3,7 @@
 # group: [rename_col]
 
 statement ok
-CREATE TABLE test(i INTEGER, j INTEGER, PRIMARY KEY(i, j))
+CREATE TABLE test(i INTEGER, j INTEGER)
 
 statement ok
 INSERT INTO test (i, j) VALUES (1, 1), (2, 2)

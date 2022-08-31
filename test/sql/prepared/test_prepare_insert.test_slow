@@ -2,7 +2,7 @@
 # description: PREPARE for INSERT
 # group: [prepared]
 
-require skip_reload
+
 
 
 statement ok

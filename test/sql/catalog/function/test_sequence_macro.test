@@ -2,7 +2,7 @@
 # description: Test Sequence Macro
 # group: [function]
 
-require skip_reload
+
 
 
 statement ok

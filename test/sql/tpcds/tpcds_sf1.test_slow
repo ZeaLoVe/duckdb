@@ -2,13 +2,12 @@
 # description: Test TPC-DS SF1
 # group: [tpcds]
 
-require tpcds
+
 
 statement ok
 CALL dsdgen(sf=1)
 
-statement ok
-PRAGMA default_null_order='NULLS LAST'
+
 
 # check table counts
 query T

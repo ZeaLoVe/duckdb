@@ -1,16 +1,15 @@
+# done
+
 # name: test/issues/rigger/test_508.test
 # description: Issue 508
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
-
 # LEFT JOIN on column with NULL value results in a segmentation fault
 statement ok
-CREATE TABLE t0(c0 INT);
+CREATE TABLE t0(c0 INT NULL);
 
 statement ok
-CREATE TABLE t1(c0 INT);
+CREATE TABLE t1(c0 INT NULL);
 
 statement ok
 INSERT INTO t0(c0) VALUES (0);

@@ -2,7 +2,7 @@
 # description: Test the ICU calendar interface
 # group: [timezone]
 
-require icu
+
 
 query I
 SELECT name FROM icu_calendar_names()

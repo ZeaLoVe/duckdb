@@ -2,8 +2,7 @@
 # description: utinyint try cast
 # group: [numeric]
 
-statement ok
-PRAGMA enable_verification
+
 
 # tinyint casts
 statement ok
@@ -56,7 +55,7 @@ SELECT i::BIGINT FROM utinyints ORDER BY i
 255
 
 query I
-SELECT i::HUGEINT FROM utinyints ORDER BY i
+SELECT i::BIGINT FROM utinyints ORDER BY i
 ----
 0
 255

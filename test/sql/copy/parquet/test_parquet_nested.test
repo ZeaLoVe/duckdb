@@ -2,7 +2,7 @@
 # description: Test basic parquet reading
 # group: [parquet]
 
-require parquet
+
 
 
 query I

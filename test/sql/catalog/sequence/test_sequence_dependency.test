@@ -2,7 +2,7 @@
 # description: Test Sequence Dependencies
 # group: [sequence]
 
-require skip_reload
+
 
 
 statement ok

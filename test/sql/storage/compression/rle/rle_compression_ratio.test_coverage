@@ -5,8 +5,7 @@
 # load the DB from disk
 load __TEST_DIR__/test_rle.db
 
-statement ok
-PRAGMA force_compression='rle'
+
 
 # Maximum rle compression for this column:
 # Uncompressed size: 5 x 64bit
@@ -18,8 +17,7 @@ CREATE TABLE test_rle AS SELECT (i/5)::INT64 FROM range(0, 2500000) tbl(i);
 statement ok
 checkpoint
 
-statement ok
-PRAGMA force_compression='uncompressed'
+
 
 statement ok
 CREATE TABLE test_uncompressed AS SELECT (i/10)::INT64 FROM range(0, 2500000) tbl(i);
@@ -47,8 +45,7 @@ drop table test_uncompressed
 # Assert that all supported types do in fact compress
 foreach type <numeric>
 
-statement ok
-PRAGMA force_compression='uncompressed';
+
 
 statement ok
 CREATE TABLE test_uncompressed AS SELECT ((i/10)%100)::${type} FROM range(0, 2500000) tbl(i);
@@ -56,8 +53,7 @@ CREATE TABLE test_uncompressed AS SELECT ((i/10)%100)::${type} FROM range(0, 250
 statement ok
 checkpoint
 
-statement ok
-PRAGMA force_compression='rle'
+
 
 statement ok
 CREATE TABLE test_rle AS SELECT ((i/10)%100)::${type} FROM range(0, 2500000) tbl(i);

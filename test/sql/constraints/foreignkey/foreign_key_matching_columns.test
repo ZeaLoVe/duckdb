@@ -2,34 +2,33 @@
 # description: Issue #3505: foreign key support without an explicit column name
 # group: [foreignkey]
 
-statement ok
-PRAGMA enable_verification
+
 
 # non-existant reference
 statement error
 CREATE TABLE routes (
-	route_id TEXT PRIMARY KEY,
+	route_id TEXT ,
 	agency_id TEXT,
 	FOREIGN KEY (agency_id) REFERENCES agency
 );
 
 statement ok
 CREATE TABLE agency (
-	agency_id TEXT PRIMARY KEY,
+	agency_id TEXT ,
 	agency_name TEXT UNIQUE NOT NULL
 );
 
 # column count mismatch
 statement error
 CREATE TABLE routes (
-	route_id TEXT PRIMARY KEY,
+	route_id TEXT ,
 	agency_id TEXT,
 	FOREIGN KEY (route_id, agency_id) REFERENCES agency
 );
 
 statement ok
 CREATE TABLE routes (
-	route_id TEXT PRIMARY KEY,
+	route_id TEXT ,
 	agency_id TEXT,
 	FOREIGN KEY (agency_id) REFERENCES agency
 );
@@ -62,7 +61,7 @@ CREATE TABLE agency (
 
 statement error
 CREATE TABLE routes (
-	route_id TEXT PRIMARY KEY,
+	route_id TEXT ,
 	agency_id TEXT,
 	FOREIGN KEY (agency_id) REFERENCES agency
 );
@@ -70,7 +69,7 @@ CREATE TABLE routes (
 # self-referential primary key
 statement ok
 CREATE TABLE routes (
-	route_id TEXT PRIMARY KEY,
+	route_id TEXT ,
 	agency_id TEXT,
 	FOREIGN KEY (agency_id) REFERENCES routes
 );
@@ -101,7 +100,7 @@ CREATE TABLE agency (
 
 statement ok
 CREATE TABLE routes (
-	route_id TEXT PRIMARY KEY,
+	route_id TEXT ,
 	agency_id TEXT,
 	FOREIGN KEY (route_id, agency_id) REFERENCES agency
 );

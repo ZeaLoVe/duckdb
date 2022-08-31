@@ -1,9 +1,10 @@
+
+# done with error
 # name: test/issues/general/test_1248.test
 # description: Issue 1248: Segmentation fault on subselects with "recursive"
 # group: [general]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement error
 with test(round) as (
@@ -39,7 +40,7 @@ from
 0	0
 
 query I
-with recursive test(round) as (
+with test(round) as (
     select 0
     union all
     select round+1 from test where round <= 20

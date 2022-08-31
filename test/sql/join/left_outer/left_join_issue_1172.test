@@ -2,8 +2,7 @@
 # description: Left Outer join dropping rows
 # group: [left_outer]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 drop table if exists t1;

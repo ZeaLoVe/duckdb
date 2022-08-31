@@ -2,10 +2,9 @@
 # description: Test json_structure() function
 # group: [json]
 
-require json
 
-statement ok
-pragma enable_verification
+
+
 
 
 statement error

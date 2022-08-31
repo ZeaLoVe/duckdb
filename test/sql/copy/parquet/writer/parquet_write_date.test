@@ -2,10 +2,9 @@
 # description: Parquet dates round trip
 # group: [writer]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CREATE TABLE dates(d DATE)

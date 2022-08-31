@@ -2,14 +2,13 @@
 # description: SQLancer bug found with statistics not being properly updated on empty strings
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 BEGIN TRANSACTION;
 
 statement ok
-CREATE TABLE t0(c0 VARCHAR NOT NULL DEFAULT(-1981039679), c1 TIMESTAMP);;
+CREATE TABLE t0(c0 VARCHAR NOT NULL DEFAULT(-1981039679), c1 TIMESTAMP NULL);
 
 statement ok
 INSERT INTO t0 VALUES('',NULL);

@@ -2,10 +2,9 @@
 # description: Test basic globbing of parquet files
 # group: [parquet]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification
+
+
 
 query II
 select * from parquet_scan('data/parquet-testing/glob*/t?.parquet') order by i

@@ -2,7 +2,7 @@
 # description: Test reading csv files over http
 # group: [csv]
 
-require httpfs
+
 
 # regular csv file
 query ITTTIITITTIIII nosort webpagecsv

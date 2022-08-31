@@ -2,10 +2,9 @@
 # description: Test get_substrait with top-n queries
 # group: [substrait]
 
-require substrait
 
-statement ok
-PRAGMA enable_verification
+
+
 
 statement ok
 CREATE TABLE test (i integer,j VARCHAR, k varchar );

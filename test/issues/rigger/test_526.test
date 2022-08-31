@@ -1,17 +1,18 @@
+# different concat
+
 # name: test/issues/rigger/test_526.test
 # description: Issue 526
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 # Query that uses the CONCAT() function and OR expression crashes
 # FIXME: #398
 statement ok
-CREATE TABLE t0(c0 REAL);
+CREATE TABLE t0(c0 DOUBLE);
 
 statement ok
-CREATE TABLE t1(c0 INT2);
+CREATE TABLE t1(c0 INT8);
 
 statement ok
 CREATE TABLE t2(c0 INT);

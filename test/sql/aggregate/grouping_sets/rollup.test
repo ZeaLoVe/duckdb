@@ -2,11 +2,10 @@
 # description: Test ROLLUP
 # group: [grouping_sets]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
-create table students (course VARCHAR, type VARCHAR);
+create table students (course VARCHAR NULL, type VARCHAR NULL);
 
 statement ok
 insert into students

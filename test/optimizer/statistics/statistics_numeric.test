@@ -2,8 +2,7 @@
 # description: Statistics propagation of numeric functions
 # group: [statistics]
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+
 
 statement ok
 CREATE TABLE integers(i INTEGER);

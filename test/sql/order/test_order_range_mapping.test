@@ -2,8 +2,7 @@
 # description: Test ORDER BY range mapping of order expressions using statistics
 # group: [order]
 
-statement ok
-pragma enable_verification
+
 
 # cast to utinyint
 foreach type <integral>
@@ -28,7 +27,7 @@ drop table test
 endloop
 
 # cast to usmallint
-foreach type smallint usmallint integer uinteger bigint ubigint hugeint
+foreach type smallint usmallint integer uinteger bigint ubigint BIGINT
 
 statement ok
 create table test (i ${type})
@@ -50,7 +49,7 @@ drop table test
 endloop
 
 # cast to uint
-foreach type integer uinteger bigint ubigint hugeint
+foreach type integer uinteger bigint ubigint BIGINT
 
 statement ok
 create table test (i ${type})
@@ -72,7 +71,7 @@ drop table test
 endloop
 
 # cast to ubigint
-foreach type bigint ubigint hugeint
+foreach type bigint ubigint BIGINT
 
 statement ok
 create table test (i ${type})
@@ -94,7 +93,7 @@ drop table test
 endloop
 
 statement ok
-create table test (i hugeint)
+create table test (i BIGINT)
 
 statement ok
 insert into test values (295147905179352825856), (73786976294838206464), (147573952589676412928), (36893488147419103232)

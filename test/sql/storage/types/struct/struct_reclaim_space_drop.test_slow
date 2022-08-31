@@ -2,13 +2,12 @@
 # description: Test that we reclaim space when dropping tables with struct columns
 # group: [struct]
 
-require skip_reload
+
 
 
 load __TEST_DIR__/test_reclaim_space.db
 
-statement ok
-PRAGMA force_checkpoint;
+
 
 statement ok
 CREATE TABLE structs AS SELECT {'i': i, 'j': i::VARCHAR} c FROM range(10000000) tbl(i);

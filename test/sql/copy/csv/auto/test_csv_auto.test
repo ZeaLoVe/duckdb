@@ -2,7 +2,7 @@
 # description: Test csv dialect detection
 # group: [auto]
 
-require vector_size 512
+
 
 # CSV file with RFC-conform dialect
 statement ok

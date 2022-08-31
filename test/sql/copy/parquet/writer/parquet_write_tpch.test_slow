@@ -2,9 +2,9 @@
 # description: Parquet TPC-H tests
 # group: [writer]
 
-require parquet
 
-require tpch
+
+
 
 statement ok
 CREATE SCHEMA tpch;

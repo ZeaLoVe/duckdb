@@ -2,13 +2,11 @@
 # description: Write min/max stats to Parquet files
 # group: [writer]
 
-require parquet
 
-statement ok
-PRAGMA enable_verification;
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY;
+;
+
+
 
 statement ok
 CREATE TABLE boolean_limits AS SELECT (false)::BOOLEAN min, true::BOOLEAN max
@@ -184,9 +182,9 @@ endloop
 
 # no stats for these types
 statement ok
-CREATE TABLE hugeint_limits AS SELECT (-170141183460469231731687303715884105727)::HUGEINT min, 170141183460469231731687303715884105727::HUGEINT max
+CREATE TABLE BIGINT_limits AS SELECT (-170141183460469231731687303715884105727)::BIGINT min, 170141183460469231731687303715884105727::BIGINT max
 
-foreach type hugeint
+foreach type BIGINT
 
 statement ok
 CREATE TABLE tbl(i ${type});

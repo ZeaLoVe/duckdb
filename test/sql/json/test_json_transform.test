@@ -2,10 +2,9 @@
 # description: Test json_transform function
 # group: [json]
 
-require json
 
-statement ok
-pragma enable_verification
+
+
 
 # aliases
 query T

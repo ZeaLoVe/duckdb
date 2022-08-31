@@ -1,9 +1,10 @@
+# unspported
+
 # name: test/issues/rigger/test_510.test
 # description: Issue 510
 # group: [rigger]
 
-statement ok
-PRAGMA enable_verification
+
 
 # SIMILAR TO results in an incorrect result
 statement ok

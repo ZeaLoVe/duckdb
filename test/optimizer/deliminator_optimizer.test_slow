@@ -12,8 +12,7 @@ SELECT i, (SELECT MIN(i+2*i1.i) FROM integers) FROM integers i1 ORDER BY i
 statement ok
 INSERT INTO integers VALUES (1), (2), (3)
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY
+
 
 # correlated any/all
 query II
@@ -37,7 +36,7 @@ CREATE TABLE test (id INTEGER, b INTEGER)
 #logical_opt	<!REGEX>:.*DELIM_JOIN.*
 
 # FTS
-require fts
+
 
 statement ok
 CREATE TABLE documents(id VARCHAR, body VARCHAR)
@@ -45,8 +44,7 @@ CREATE TABLE documents(id VARCHAR, body VARCHAR)
 statement ok
 INSERT INTO documents VALUES ('doc1', ' QUÁCKING+QUÁCKING+QUÁCKING'), ('doc2', ' BÁRKING+BÁRKING+BÁRKING+BÁRKING'), ('doc3', ' MÉOWING+MÉOWING+MÉOWING+MÉOWING+MÉOWING+999')
 
-statement ok
-PRAGMA create_fts_index('documents', 'id', 'body', overwrite=1)
+
 
 query II
 EXPLAIN SELECT score, id, body FROM (SELECT *, fts_main_documents.match_bm25(id, 'quacked barked') AS score FROM documents) sq WHERE score IS NOT NULL ORDER BY score DESC
@@ -54,7 +52,7 @@ EXPLAIN SELECT score, id, body FROM (SELECT *, fts_main_documents.match_bm25(id,
 logical_opt	<!REGEX>:.*DELIM_JOIN.*
 
 # TPC-H
-require tpch
+
 
 statement ok
 CALL dbgen(sf=0.01)

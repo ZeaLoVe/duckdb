@@ -2,8 +2,7 @@
 # description: Test all strftime % codes with the date type
 # group: [date]
 
-statement ok
-PRAGMA enable_verification
+
 
 statement ok
 CREATE TABLE dates(d DATE);

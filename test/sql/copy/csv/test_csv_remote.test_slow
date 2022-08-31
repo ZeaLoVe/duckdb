@@ -2,7 +2,7 @@
 # description: Test reading csv files over http, slow queries
 # group: [csv]
 
-require httpfs
+
 
 # Read a compressed file (~44MB compressed, ~700MB uncompressed) over HTTP
 query IIIIII

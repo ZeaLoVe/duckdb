@@ -2,13 +2,12 @@
 # description: Test the Deliminator optimizer
 # group: [optimizer]
 
-require tpch
+
 
 statement ok
 CALL dbgen(sf=0.0001);
 
-statement ok
-PRAGMA explain_output = OPTIMIZED_ONLY
+
 
 # Q 02
 query II

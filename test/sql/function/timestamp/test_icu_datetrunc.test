@@ -2,7 +2,7 @@
 # description: Test the ICU DATETRUNC functions
 # group: [timestamp]
 
-require icu
+
 
 statement ok
 SET TimeZone = 'America/Los_Angeles';

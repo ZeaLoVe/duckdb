@@ -2,8 +2,7 @@
 # description: Test basic functionality of maps
 # group: [map]
 
-statement ok
-PRAGMA enable_verification
+
 
 # All keys are NULL
 statement error
